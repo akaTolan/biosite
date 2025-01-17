@@ -8,38 +8,133 @@
   padding: 0;
 }
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
   font: inherit;
-  vertical-align: baseline
+  vertical-align: baseline;
 }
 
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
-  display: block
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 body {
-  line-height: 1
+  line-height: 1;
 }
 
-ol,ul {
-  list-style: none
+ol,
+ul {
+  list-style: none;
 }
 
-blockquote,q {
-  quotes: none
+blockquote,
+q {
+  quotes: none;
 }
 
-blockquote:before,blockquote:after,q:before,q:after {
-  content: '';
-  content: none
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0
+  border-spacing: 0;
 }
 html {
   scroll-behavior: smooth;
@@ -68,12 +163,12 @@ h6 {
 
 /* Variaveis  */
 :root {
-  --text-color-0: #FFF;
+  --text-color-0: #fff;
   --background-color-0: #000;
   --text-color-1: #000;
-  --background-color-2: #FFF;
+  --background-color-2: #fff;
   --zindex-0: 10;
-  --font-family: "Inter", sans-serif;/* Fonte ativa: Inter */
+  --font-family: "Inter", sans-serif; /* Fonte ativa: Inter */
 }
 /* Utils */
 /* 
@@ -101,11 +196,11 @@ body {
   overflow-x: hidden; /* Impede o scroll horizontal */
   overflow-y: auto; /* Permite o scroll vertical */
   background-color: var(--background-color-0);
-  color: var(--text-color-0); 
-  font-family: var(--font-family); 
+  color: var(--text-color-0);
+  font-family: var(--font-family);
   font-size: 100%; /* Tamanho da fonte igual a 16px */
 }
-.wrapper{
+.wrapper {
   position: relative;
   min-height: 100%;
 }
@@ -146,7 +241,7 @@ body {
 /* Estilo do Logo que aparece por cima de tudo no topo */
 .header-logo {
   /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
-  position: absolute; /*  Permite posicionamento livre */ 
+  position: absolute; /*  Permite posicionamento livre */
   left: 5%; /* Ajusta a posição à esquerda */
   width: 40px; /* Ajuste conforme necessário */
   height: auto; /* Mantém a proporção */
@@ -166,7 +261,6 @@ body {
   white-space: nowrap; /* Impede a quebra de texto em espaços */
 }
 
-
 /* Estilo para o container principal */
 .hero {
   display: flex; /* Flexbox para alinhar conteúdo */
@@ -176,7 +270,7 @@ body {
   padding: 0 5%; /* Espaçamento interno em torno do conteúdo */
   max-width: 100%; /* Largura total */
   height: 100vh; /* Ocupa o tamanho total do viewport */
-  background-image: url('assets/background.png'); /* Caminho para a imagem de fundo */
+  background-image: url("assets/background.png"); /* Caminho para a imagem de fundo */
   background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
   background-position: center; /* Centraliza a imagem de fundo */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
@@ -185,21 +279,58 @@ body {
 
 .hero::before {
   content: "";
-  position: absolute; 
+  position: absolute;
   pointer-events: none;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura (50% opacidade) */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Sobreposição escura (50% opacidade) */
 }
 
 .hero-content {
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
-  z-index: var(--zindex-0); /* Garante que o conteúdo fica acima da imagem de fundo */
+  z-index: var(
+    --zindex-0
+  ); /* Garante que o conteúdo fica acima da imagem de fundo */
   padding: 5%;
   max-width: 70%;
+}
+
+.burger-menu {
+  position: absolute;
+  z-index: var(--zindex-0);
+  bottom: 20px; 
+  left: 50%; /* Ajuste de posição horizontal */
+  width: 40px;
+  height: 30px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.burger-menu span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 6px;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+.burger-menu span:last-child {
+  margin-bottom: 0;
+}
+
+/* Efeito ao passar o mouse */
+.burger-menu:hover span {
+  background-color: #ccc;
 }
 
 .main-content {
@@ -207,7 +338,6 @@ body {
   flex-direction: column; /* Alinha o conteúdo na vertical */
   height: 100%;
 }
-
 
 /* Estilo do título */
 .title-xl {
@@ -289,7 +419,6 @@ a:hover {
   z-index: -1; /* Envia o vídeo para o fundo */
   filter: brightness(0.2); /* Reduz o brilho para contraste */
 }
-
 
 .content-links {
   background-color: var(--text-color-0);
