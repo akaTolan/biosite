@@ -1,0 +1,278 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  display: block
+}
+
+body {
+  line-height: 1
+}
+
+ol,ul {
+  list-style: none
+}
+
+blockquote,q {
+  quotes: none
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+  content: '';
+  content: none
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+html {
+  scroll-behavior: smooth;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/**
+ * A11Y issue - Disable smooth scrolling when users have prefers-reduced-motion enabled
+ */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Variaveis  */
+:root {
+  --text-color-0: #FFF;
+  --background-color-0: #000;
+  --font-family: "Inter", sans-serif;/* Fonte ativa: Inter */
+}
+/* Utils */
+/* 
+ * The .visually-hidden class is used to hide elements visually while keeping them accessible to screen readers.
+ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* Estilos */
+
+body {
+  display: flex; /* Flexbox para alinhar conteúdo */
+  flex-direction: column; /* Alinha o conteúdo na vertical */
+  justify-content: center; /* Alinha horizontalmente o conteúdo ao centro */
+  align-items: center; /* Alinha verticalmente o conteúdo ao centro */
+  height: auto; /* Altura total da página */
+  overflow-x: hidden; /* Impede o scroll horizontal */
+  overflow-y: auto; /* Permite o scroll vertical */
+  background-color: var(--background-color-0);
+  color: var(--text-color-0); 
+  font-family: var(--font-family); 
+  font-size: 100%; /* Tamanho da fonte igual a 16px */
+}
+.wrapper{
+  position: relative;
+  min-height: 100%;
+}
+
+/* Adição de overlay branco com fade-out */
+.intro-overlay {
+  position: fixed; /* Cobre todo o viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* Fundo branco */
+  z-index: 100; /* Fica acima de todos os elementos */
+  opacity: 1; /* Totalmente opaco no início */
+  transition: opacity 2s ease-out; /* Transição suave para transparência */
+}
+
+/* Estilo do texto que aparece inicialmente centrado */
+.intro-text {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta o alinhamento central */
+  color: #000; /* Texto preto */
+  font-size: 1.2rem; /* Mesmo tamanho do parágrafo */
+  font-weight: 400; /* Mesmo peso do parágrafo */
+  text-align: center; /* Alinha o texto no centro */
+  opacity: 1; /* Totalmente opaco inicialmente */
+  transition: opacity 1s ease-out; /* Transição suave para transparência */
+}
+
+.header {
+  position: relative; /* Permite posicionamento livre */
+  padding-top: 6%; /* Espaçamento interno */
+  width: 100%; /* Largura total */
+  height: auto;
+}
+/* Estilo do Logo que aparece por cima de tudo no topo */
+.header-logo {
+  /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
+  position: absolute; /*  Permite posicionamento livre */ 
+  left: 5%; /* Ajusta a posição à esquerda */
+  width: 40px; /* Ajuste conforme necessário */
+  height: auto; /* Mantém a proporção */
+  z-index: 10; /* Garante que o logótipo fica acima de outros elementos */
+}
+/* Estilo do texto que aparece na lombada vertical */
+.header-text {
+  /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
+  position: absolute; /*  Permite posicionamento livre */
+  right: 5%; /* Ajusta a posição à direita */
+  writing-mode: vertical-rl; /* Orientação do texto na vertical */
+  transform: rotate(360deg); /* Ajusta para leitura de cima para baixo */
+  font-size: 0.6rem; /* Texto menor que o parágrafo */
+  font-weight: 300; /* Peso mais leve para estilo secundário */
+  z-index: 10; /* Garante que fica acima de outros elementos */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+  white-space: nowrap; /* Impede a quebra de texto em espaços */
+}
+
+
+/* Estilo para o container principal */
+.hero-content {
+  display: flex; /* Flexbox para alinhar conteúdo */
+  flex-direction: column; /* Alinha o conteúdo na vertical */
+  justify-content: center; /* Alinha horizontalmente o conteúdo à esquerda */
+  padding: 0 5%; /* Espaçamento interno em torno do conteúdo */
+  max-width: 70%; /* Largura máxima para desktops */
+  height: 92vh; /* Altura ajustada */
+}
+
+.main-content {
+  display: flex; /* Flexbox para alinhar conteúdo */
+  flex-direction: column; /* Alinha o conteúdo na vertical */
+  height: 100%;
+}
+
+
+/* Estilo do título */
+.title-xl {
+  font-weight: bold; /* Texto em negrito */
+  font-size: 2.3rem; /* Tamanho da fonte */
+  margin: 0; /* Remove margens padrão */
+  padding-top: 1rem; /* Espaço superior */
+  padding-bottom: 0; /* Sem espaço inferior */
+}
+/* Estilo para titulo segundário */
+.title-large {
+  font-weight: 400; /* Texto em negrito */
+  font-size: 1.8rem; /* Tamanho da fonte */
+  padding-top: 1rem; /* Espaço superior */
+  padding-bottom: 0; /* Sem espaço inferior */
+}
+/* Estilo dos parágrafos */
+.body-text {
+  font-weight: 400; /* Peso regular da fonte */
+  font-size: 1.2rem; /* Tamanho da fonte */
+  margin-top: 0.8rem; /* Espaço superior do parágrafo */
+  margin-bottom: 0.8rem; /* Espaço inferior do parágrafo */
+}
+/* Estilo dos botões */
+a {
+  display: inline-block; /* Exibe como bloco inline */
+  margin-top: 1rem; /* Espaçamento entre o botão e o texto acima */
+  padding: 0.9rem 1.2rem; /* Padding interno do botão DESKTOP */
+  background-color: transparent; /* Fundo transparente */
+  color: #fff; /* Cor do texto */
+  border: 2px solid #fff; /* Borda branca */
+  text-decoration: none; /* Remove sublinhado */
+  font-weight: 400; /* Peso regular da fonte */
+  transition: all 0.3s ease; /* Transição suave em hover */
+}
+/* Estilo hover para os botões */
+a:hover {
+  background-color: #fff; /* Fundo branco em hover */
+  color: #000; /* Texto preto em hover */
+  border: 2px solid #fff; /* Mantém a borda branca */
+}
+/* Estilos responsivos para ecrãs menores */
+@media (max-width: 800px) {
+  body {
+    justify-content: left; /* Alinhamento horizontal ajustado */
+    align-items: center; /* Alinhamento vertical ajustado */
+    text-align: left; /* Texto alinhado à esquerda */
+  }
+  p {
+    font-size: 1rem; /* Reduz tamanho da fonte para dispositivos menores */
+  }
+  a {
+    padding: 0.8rem 1rem; /* Padding interno (mais reduzido) no botão MOBILE */
+  }
+  .content {
+    margin-top: 8rem;
+    max-width: 80%; /* Largura ajustada para ecrãs menores */
+  }
+}
+/* Estilo para a imagem de fundo */
+.background-image {
+  position: absolute; /* Fixa a posição no ecrã */
+  top: 0;
+  left: 0;
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  object-fit: cover; /* Ajusta a imagem ao tamanho do ecrã */
+  z-index: -1; /* Envia a imagem para o fundo */
+  filter: brightness(0.2); /* Reduz o brilho para contraste */
+}
+/* Estilo para o vídeo de fundo */
+.background-video {
+  position: absolute; /* Fixa a posição no ecrã */
+  top: 0;
+  left: 0;
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  object-fit: cover; /* Ajusta o vídeo ao tamanho do ecrã */
+  z-index: -1; /* Envia o vídeo para o fundo */
+  filter: brightness(0.2); /* Reduz o brilho para contraste */
+}
+
+
+.content-links {
+  background-color: var(--text-color-0);
+  color: var(--background-color-0);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.content-links a {
+  color: var(--background-color-0);
+}
