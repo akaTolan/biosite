@@ -70,6 +70,9 @@ h6 {
 :root {
   --text-color-0: #FFF;
   --background-color-0: #000;
+  --text-color-1: #000;
+  --background-color-2: #FFF;
+  --zindex-0: 10;
   --font-family: "Inter", sans-serif;/* Fonte ativa: Inter */
 }
 /* Utils */
@@ -114,7 +117,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff; /* Fundo branco */
+  background-color: var(--background-color-2); /* Fundo branco */
   z-index: 100; /* Fica acima de todos os elementos */
   opacity: 1; /* Totalmente opaco no início */
   transition: opacity 2s ease-out; /* Transição suave para transparência */
@@ -135,8 +138,8 @@ body {
 }
 
 .header {
-  position: relative; /* Permite posicionamento livre */
-  padding-top: 6%; /* Espaçamento interno */
+  position: absolute; /* Permite posicionamento livre */
+  top: 6%; /* Espaçamento interno */
   width: 100%; /* Largura total */
   height: auto;
 }
@@ -165,13 +168,38 @@ body {
 
 
 /* Estilo para o container principal */
+.hero {
+  display: flex; /* Flexbox para alinhar conteúdo */
+  flex-direction: column; /* Alinha o conteúdo na vertical */
+  justify-content: center; /* Alinha o conteúdo verticalmente ao centro */
+  align-items: start; /* Alinha horizontalmente o conteúdo ao centro */
+  padding: 0 5%; /* Espaçamento interno em torno do conteúdo */
+  max-width: 100%; /* Largura total */
+  height: 100vh; /* Ocupa o tamanho total do viewport */
+  background-image: url('assets/background.png'); /* Caminho para a imagem de fundo */
+  background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
+  background-position: center; /* Centraliza a imagem de fundo */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  position: relative; /* Garante posicionamento adequado */
+}
+
+.hero::before {
+  content: "";
+  position: absolute; 
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura (50% opacidade) */
+}
+
 .hero-content {
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
-  justify-content: center; /* Alinha horizontalmente o conteúdo à esquerda */
-  padding: 0 5%; /* Espaçamento interno em torno do conteúdo */
-  max-width: 70%; /* Largura máxima para desktops */
-  height: 92vh; /* Altura ajustada */
+  z-index: var(--zindex-0); /* Garante que o conteúdo fica acima da imagem de fundo */
+  padding: 5%;
+  max-width: 70%;
 }
 
 .main-content {
