@@ -167,7 +167,6 @@ h6 {
   --background-color-0: #000;
   --text-color-1: #000;
   --background-color-2: #fff;
-  --zindex-0: 10;
   --font-family: "Inter", sans-serif; /* Fonte ativa: Inter */
 }
 /* Utils */
@@ -270,45 +269,27 @@ body {
   padding: 0 5%; /* Espaçamento interno em torno do conteúdo */
   max-width: 100%; /* Largura total */
   height: 100vh; /* Ocupa o tamanho total do viewport */
-  background-image: url("assets/background.png"); /* Caminho para a imagem de fundo */
-  background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
+  background-image: 
+  radial-gradient(circle, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 1) 100%), 
+  url('assets/background.png'); /* Caminho para a imagem de fundo */  background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
   background-position: center; /* Centraliza a imagem de fundo */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   position: relative; /* Garante posicionamento adequado */
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); /* Sobreposição escura (50% opacidade) */
-}
 
 .hero-content {
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
-  z-index: var(
-    --zindex-0
-  ); /* Garante que o conteúdo fica acima da imagem de fundo */
   padding: 5%;
   max-width: 70%;
 }
 
 .burger-menu {
   position: absolute;
-  z-index: var(--zindex-0);
   bottom: 20px; 
   left: 50%; /* Ajuste de posição horizontal */
-  width: 40px;
+  width: 3rem;
   height: 30px;
   display: inline-block;
   cursor: pointer;
@@ -316,11 +297,12 @@ body {
 
 .burger-menu span {
   display: block;
-  height: 4px;
+  height: 0.1875rem;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--background-color-2);
   margin-bottom: 6px;
   border-radius: 2px;
+  transform: translateX(-50%);
   transition: 0.3s ease;
 }
 
@@ -350,14 +332,14 @@ body {
 /* Estilo para titulo segundário */
 .title-large {
   font-weight: 400; /* Texto em negrito */
-  font-size: 1.8rem; /* Tamanho da fonte */
+  font-size: 2.5rem; /* Tamanho da fonte */
   padding-top: 1rem; /* Espaço superior */
   padding-bottom: 0; /* Sem espaço inferior */
 }
 /* Estilo dos parágrafos */
 .body-text {
-  font-weight: 400; /* Peso regular da fonte */
-  font-size: 1.2rem; /* Tamanho da fonte */
+  font-weight: 300; /* Peso regular da fonte */
+  font-size: 1.125rem; /* Tamanho da fonte */
   margin-top: 0.8rem; /* Espaço superior do parágrafo */
   margin-bottom: 0.8rem; /* Espaço inferior do parágrafo */
 }
@@ -385,6 +367,9 @@ a:hover {
     justify-content: left; /* Alinhamento horizontal ajustado */
     align-items: center; /* Alinhamento vertical ajustado */
     text-align: left; /* Texto alinhado à esquerda */
+  }
+  .hero-content {
+    max-width: 100%; /* Largura total para ecrãs menores */
   }
   p {
     font-size: 1rem; /* Reduz tamanho da fonte para dispositivos menores */
