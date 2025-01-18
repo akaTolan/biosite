@@ -2,7 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".intro-overlay");
   const centeredText = document.querySelector(".intro-text");
 
+  const burgerMenu = document.querySelector(".burger-menu");
+  const videoSection = document.getElementById("videoSection");
   const video = document.getElementById("myVideo");
+
   const playPauseButton = document.getElementById("playPauseButton");
   const playPauseIcon = document.getElementById("playPauseIcon");
   const pauseButton = document.createElement("button"); // Cria o botão de pausa
@@ -28,8 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
   pauseButton.appendChild(pauseIcon);
   document.querySelector(".video-container").appendChild(pauseButton);
 
-  // Botão play/pause no centro
-  playPauseButton.addEventListener("click", () => {
+  burgerMenu.addEventListener("click", () => {
+    // Faz o scroll suave até a seção de vídeo
+    videoSection.scrollIntoView({ behavior: "smooth" });
+
+    // Toca o vídeo quando a seção é alcançada
+    video.play();
+  });
+
+  function toggleVideo() {
     if (video.paused) {
       video.play();
       playPauseIcon.src = "assets/pause_sign.png";
@@ -39,15 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
       playPauseIcon.src = "assets/play_sign.png";
       playPauseButton.classList.remove("hidden"); // Mostra o botão play
     }
+  }
+
+  // Botão play/pause no centro
+  playPauseButton.addEventListener("click", () => {
+    toggleVideo();
   });
 
   // Botão pausa no canto
   pauseButton.addEventListener("click", () => {
-    if (!video.paused) {
-      video.pause();
-      playPauseIcon.src = "assets/play_sign.png";
-      playPauseButton.classList.remove("hidden"); // Mostra o botão play
-    }
+    toggleVideo();
   });
 
   // Mostrar/ocultar os botões no hover
