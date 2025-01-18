@@ -337,6 +337,69 @@ body {
   display: block; /* Remove espaços indesejados ao redor do elemento */
   object-fit: cover; /* Garante que o vídeo preencha o espaço mantendo a proporção */
 }
+/* Estilo para o botão play/pause */
+.play-pause-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.16); /* Círculo branco transparente */
+  border: none;
+  border-radius: 50%;
+  width: 80px; /* Tamanho do botão */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  z-index: 2;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.play-pause-btn img {
+  width: 40px; /* Tamanho do ícone */
+  height: 40px;
+  pointer-events: none;
+}
+
+.play-pause-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.video-container:hover .play-pause-btn {
+  opacity: 1; /* Mostrar o botão no hover */
+}
+
+.video-container .pause-btn {
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  background-color: rgba(255, 255, 255, 0.16);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-container:hover .pause-btn {
+  opacity: 1; /* Mostrar o botão no hover */
+}
+
+.video-container .pause-btn img {
+  width: 2.5rem; /* Tamanho do ícone */
+  height: 2.5rem;
+  pointer-events: none;
+}
 
 /* Estilo do título */
 .title-xl {

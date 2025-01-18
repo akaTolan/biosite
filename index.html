@@ -10,17 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Meta description para SEO -->
     <meta name="description" content="FFF Design Assembly" />
-    <title>FFFDA</title>    
+    <title>FFFDA</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-     <!-- Overlay branco para fade-out -->
-      <div class="intro-overlay">
-        <p class="intro-text" aria-label="Inspirational message">
-          Every great thing starts with a blank page
-        </p>
-      </div>
-    <div class="wrapper">    
+    <!-- Overlay branco para fade-out -->
+    <div class="intro-overlay">
+      <p class="intro-text" aria-label="Inspirational message">
+        Every great thing starts with a blank page
+      </p>
+    </div>
+    <div class="wrapper">
       <header class="header">
         <img
           src="assets/logo_symbol.png"
@@ -38,39 +38,44 @@
       </header>
       <main class="main-content">
         <section class="hero">
-            <div class="hero-content">
-              <h2 class="title-large">
-                With a passion for design and powered by AI, we create strategies,
-                workshops, consultancy, and mentoring to solve real-world challenges
-                and empower teams to thrive in the age of AI.
-              </h2>
-              <p class="body-text">
-                From Product (UX/UI) Design and Design Systems to Branding,
-                Advertising and Illustration, we cover the full spectrum of visual
-                storytelling.
-              </p>
-              <p class="body-text">Let's create something extraordinary together!</p>
-            </div>
-            <div class="burger-menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+          <div class="hero-content">
+            <h2 class="title-large">
+              With a passion for design and powered by AI, we create strategies,
+              workshops, consultancy, and mentoring to solve real-world
+              challenges and empower teams to thrive in the age of AI.
+            </h2>
+            <p class="body-text">
+              From Product (UX/UI) Design and Design Systems to Branding,
+              Advertising and Illustration, we cover the full spectrum of visual
+              storytelling.
+            </p>
+            <p class="body-text">
+              Let's create something extraordinary together!
+            </p>
+          </div>
+          <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </section>
         <section class="content-video">
-          <video   
-            autoplay
-            loop         
-            muted            
-            playsinline
-            class="video"
-            aria-label="Logo animation looping">
-            <source
-              src="assets/background.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
+          <div class="video-container">
+            <video
+              id="myVideo"
+              class="video"
+              aria-label="Logo animation looping"
+            >
+              <source src="assets/background.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <button id="playPauseButton" class="play-pause-btn">
+              <img src="assets/play_sign.png" alt="Play" id="playPauseIcon" />
+            </button>
+            <!-- O botão de pausa será adicionado dinamicamente pelo JavaScript -->
+          </div>
+        </section>
+
         <section class="content-links">
           <a
             href="https://www.linkedin.com/company/fffdesignassembly"
@@ -94,7 +99,9 @@
         <section class="content-contact">
           <div class="contact-wrapper">
             <h2 class="contact-title">Let’s talk?</h2>
-            <p class="contact-subtitle">Schedule a call to discuss your ideas</p>
+            <p class="contact-subtitle">
+              Schedule a call to discuss your ideas
+            </p>
             <a href="#schedule-call" class="contact-button">BOOK A CALL</a>
           </div>
         </section>
@@ -102,15 +109,21 @@
       <footer class="content-footer">
         <div class="footer-content">
           <p class="footer-text">
-            The FFF Design Assembly (FFFDA) was co-created with proud by Foan82, Filipe SJ and Friends since 2024.
+            The FFF Design Assembly (FFFDA) was co-created with proud by Foan82,
+            Filipe SJ and Friends since 2024.
           </p>
-          <img src="assets/logo_sign.png" alt="FFF Design Assembly Logo" class="footer-logo" />
+          <img
+            src="assets/logo_sign.png"
+            alt="FFF Design Assembly Logo"
+            class="footer-logo"
+          />
           <div class="social-icons">
             <a href="#" class="social-icon">Instagram</a>
             <a href="#" class="social-icon">Behance</a>
             <a href="#" class="social-icon">LinkedIn</a>
           </div>
         </div>
+      </footer>
     </div>
     <!-- Script para remover overlay após fade-out -->
     <script src="scripts.js"></script>
