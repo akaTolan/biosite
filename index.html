@@ -37,7 +37,7 @@
         </div>
       </header>
       <main class="main-content">
-        <div class="hero">
+        <section class="hero">
             <div class="hero-content">
               <h2 class="title-large">
                 With a passion for design and powered by AI, we create strategies,
@@ -56,8 +56,22 @@
               <span></span>
               <span></span>
             </div>
-        </div>
-        <div class="content-links">
+        </section>
+        <section class="content-video">
+          <video   
+            autoplay
+            loop         
+            muted            
+            playsinline
+            class="video"
+            aria-label="Logo animation looping">
+            <source
+              src="assets/background.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        <section class="content-links">
           <a
             href="https://www.linkedin.com/company/fffdesignassembly"
             target="_blank"
@@ -76,20 +90,28 @@
             aria-label="Visit FFF Design Assembly on Facebook"
             >Facebook</a
           >
-        </div>
+        </section>
+        <section class="content-contact">
+          <div class="contact-wrapper">
+            <h2 class="contact-title">Let’s talk?</h2>
+            <p class="contact-subtitle">Schedule a call to discuss your ideas</p>
+            <a href="#schedule-call" class="contact-button">BOOK A CALL</a>
+          </div>
+        </section>
       </main>
+      <footer class="content-footer">
+        <div class="footer-content">
+          <p class="footer-text">
+            The FFF Design Assembly (FFFDA) was co-created with proud by Foan82, Filipe SJ and Friends since 2024.
+          </p>
+          <img src="assets/logo_sign.png" alt="FFF Design Assembly Logo" class="footer-logo" />
+          <div class="social-icons">
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Behance</a>
+            <a href="#" class="social-icon">LinkedIn</a>
+          </div>
+        </div>
     </div>
-    
-    <!-- Vídeo de fundo -->
-    <video autoplay muted loop playsinline class="background-video">
-      <source
-        src="assets/background.mp4"
-        aria-label="Logo animation looping in the background"
-        type="video/mp4"
-      />
-      Your browser does not support the video tag.
-    </video>
-
     <!-- Script para remover overlay após fade-out -->
     <script src="scripts.js"></script>
   </body>

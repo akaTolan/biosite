@@ -269,25 +269,28 @@ body {
   padding: 0 5%; /* Espaçamento interno em torno do conteúdo */
   max-width: 100%; /* Largura total */
   height: 100vh; /* Ocupa o tamanho total do viewport */
-  background-image: 
-  radial-gradient(circle, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 1) 100%), 
-  url('assets/background.png'); /* Caminho para a imagem de fundo */  background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
+  background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.6) 60%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("assets/background.png"); /* Caminho para a imagem de fundo */
+  background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
   background-position: center; /* Centraliza a imagem de fundo */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   position: relative; /* Garante posicionamento adequado */
 }
 
-
 .hero-content {
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
   padding: 5%;
-  max-width: 70%;
+  max-width: 100%;
 }
 
 .burger-menu {
   position: absolute;
-  bottom: 20px; 
+  bottom: 20px;
   left: 50%; /* Ajuste de posição horizontal */
   width: 3rem;
   height: 30px;
@@ -319,6 +322,20 @@ body {
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
   height: 100%;
+}
+
+.content-video {
+  position: relative; /* Permite posicionamento livre */
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  object-fit: cover; /* Ajusta o vídeo ao tamanho do ecrã */
+}
+
+.video {
+  width: 100%; /* O vídeo ocupa toda a largura do ecrã */
+  aspect-ratio: 16 / 9; /* Mantém a proporção 16:9 */
+  display: block; /* Remove espaços indesejados ao redor do elemento */
+  object-fit: cover; /* Garante que o vídeo preencha o espaço mantendo a proporção */
 }
 
 /* Estilo do título */
@@ -361,27 +378,7 @@ a:hover {
   color: #000; /* Texto preto em hover */
   border: 2px solid #fff; /* Mantém a borda branca */
 }
-/* Estilos responsivos para ecrãs menores */
-@media (max-width: 800px) {
-  body {
-    justify-content: left; /* Alinhamento horizontal ajustado */
-    align-items: center; /* Alinhamento vertical ajustado */
-    text-align: left; /* Texto alinhado à esquerda */
-  }
-  .hero-content {
-    max-width: 100%; /* Largura total para ecrãs menores */
-  }
-  p {
-    font-size: 1rem; /* Reduz tamanho da fonte para dispositivos menores */
-  }
-  a {
-    padding: 0.8rem 1rem; /* Padding interno (mais reduzido) no botão MOBILE */
-  }
-  .content {
-    margin-top: 8rem;
-    max-width: 80%; /* Largura ajustada para ecrãs menores */
-  }
-}
+
 /* Estilo para a imagem de fundo */
 .background-image {
   position: absolute; /* Fixa a posição no ecrã */
@@ -408,6 +405,60 @@ a:hover {
 .content-links {
   background-color: var(--text-color-0);
   color: var(--background-color-0);
+  padding: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Estilo para a seção de contato */
+.content-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem 1rem; /* Espaçamento interno */
+  background-color: var(--background-color-0); /* Fundo preto */
+  color: var(--text-color-0); /* Texto branco */
+  text-align: center;
+}
+
+.contact-wrapper {
+  max-width: 600px;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700; /* Negrito */
+  margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background-color: #444; /* Fundo cinza escuro */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 25px; /* Bordas arredondadas */
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #555; /* Fundo mais claro no hover */
+}
+
+.content-footer {
+  padding: 5%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -417,4 +468,72 @@ a:hover {
 
 .content-links a {
   color: var(--background-color-0);
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto; /* Centraliza o conteúdo */
+  text-align: center; /* Alinha o texto ao centro */
+}
+
+.footer-text {
+  font-size: 1rem; /* Tamanho do texto */
+  font-weight: 400; /* Peso regular */
+  margin-bottom: 2rem; /* Espaço abaixo do texto */
+  line-height: 1.5;
+}
+
+.footer-logo {
+  background-color: #ccc;
+  width: 150px; /* Tamanho do logotipo */
+  height: auto; /* Mantém a proporção */
+  margin: auto; /* Espaço acima e abaixo */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Espaçamento entre os ícones */
+  margin-top: 1rem;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 50px; /* Placeholder para o ícone */
+  height: 50px; /* Placeholder para o ícone */
+  background-color: #444; /* Fundo placeholder cinza escuro */
+  color: #fff; /* Texto placeholder branco */
+  border-radius: 50%; /* Torna os ícones redondos */
+  font-size: 0.75rem; /* Texto pequeno */
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px; /* Centraliza o texto verticalmente */
+  text-decoration: none; /* Remove o sublinhado */
+  transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #555; /* Fundo mais claro no hover */
+}
+
+/* Estilos responsivos para ecrãs menores */
+@media (max-width: 800px) {
+  body {
+    justify-content: left; /* Alinhamento horizontal ajustado */
+    align-items: center; /* Alinhamento vertical ajustado */
+    text-align: left; /* Texto alinhado à esquerda */
+  }
+  .hero-content {
+    max-width: 100%; /* Largura total para ecrãs menores */
+  }
+  .body-text {
+    font-size: 1rem; /* Reduz tamanho da fonte para dispositivos menores */
+  }
+  a {
+    padding: 0.8rem 1rem; /* Padding interno (mais reduzido) no botão MOBILE */
+  }
+  .content {
+    margin-top: 8rem;
+    max-width: 80%; /* Largura ajustada para ecrãs menores */
+  }
 }
