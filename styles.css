@@ -197,6 +197,8 @@ body {
   background-color: var(--background-color-0);
   color: var(--text-color-0);
   font-family: var(--font-family);
+  font-optical-sizing: auto;
+  font-style: normal;
   font-size: 100%; /* Tamanho da fonte igual a 16px */
 }
 .wrapper {
@@ -233,7 +235,7 @@ body {
 
 .header {
   position: absolute; /* Permite posicionamento livre */
-  top: 6%; /* Espaçamento interno */
+  top: 3.5rem; /* Espaçamento interno */
   width: 100%; /* Largura total */
   height: auto;
 }
@@ -241,7 +243,7 @@ body {
 .header-logo {
   /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
   position: absolute; /*  Permite posicionamento livre */
-  left: 5%; /* Ajusta a posição à esquerda */
+  left: 3.5rem; /* Ajusta a posição à esquerda */
   width: 40px; /* Ajuste conforme necessário */
   height: auto; /* Mantém a proporção */
   z-index: 10; /* Garante que o logótipo fica acima de outros elementos */
@@ -284,14 +286,14 @@ body {
 .hero-content {
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
-  padding: 5%;
-  max-width: 100%;
+  padding: 3.5rem;
+  width: 100%;
 }
 
 .burger-menu {
   position: absolute;
   bottom: 20px;
-  left: 50%; /* Ajuste de posição horizontal */
+  left: 3.5rem; /* Ajuste de posição horizontal */
   width: 3rem;
   height: 30px;
   display: inline-block;
@@ -402,26 +404,19 @@ body {
 }
 
 /* Estilo do título */
-.title-xl {
-  font-weight: bold; /* Texto em negrito */
-  font-size: 2.3rem; /* Tamanho da fonte */
-  margin: 0; /* Remove margens padrão */
-  padding-top: 1rem; /* Espaço superior */
-  padding-bottom: 0; /* Sem espaço inferior */
-}
 /* Estilo para titulo segundário */
 .title-large {
-  font-weight: 400; /* Texto em negrito */
+  font-weight: 700; /* Texto em negrito */
   font-size: 2.5rem; /* Tamanho da fonte */
-  padding-top: 1rem; /* Espaço superior */
-  padding-bottom: 0; /* Sem espaço inferior */
+  line-height: 56px; /* Altura da linha */
+  letter-spacing: -0.025em; /* Espaçamento entre letras */
 }
 /* Estilo dos parágrafos */
 .body-text {
-  font-weight: 300; /* Peso regular da fonte */
+  font-weight: 400; /* Peso regular da fonte */
   font-size: 1.125rem; /* Tamanho da fonte */
-  margin-top: 0.8rem; /* Espaço superior do parágrafo */
-  margin-bottom: 0.8rem; /* Espaço inferior do parágrafo */
+  line-height: 37px; /* Altura da linha */
+  letter-spacing: -0.025em; 
 }
 /* Estilo dos botões */
 a {
