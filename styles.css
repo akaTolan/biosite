@@ -408,14 +408,15 @@ body {
 .title-large {
   font-weight: 700; /* Texto em negrito */
   font-size: 2.5rem; /* Tamanho da fonte */
-  line-height: 56px; /* Altura da linha */
+  line-height: 3.5rem; /* Altura da linha */
   letter-spacing: -0.025em; /* Espaçamento entre letras */
+  margin-bottom: 1.5rem;
 }
 /* Estilo dos parágrafos */
 .body-text {
   font-weight: 400; /* Peso regular da fonte */
   font-size: 1.125rem; /* Tamanho da fonte */
-  line-height: 37px; /* Altura da linha */
+  line-height: 2rem; /* Altura da linha */
   letter-spacing: -0.025em; 
 }
 /* Estilo dos botões */
