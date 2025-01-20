@@ -1,166 +1,3 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-html {
-  scroll-behavior: smooth;
-}
-img {
-  max-width: 100%;
-  display: block;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
-}
-
-/**
- * A11Y issue - Disable smooth scrolling when users have prefers-reduced-motion enabled
- */
-@media screen and (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
 /* Variaveis  */
 :root {
   --text-color-0: #fff;
@@ -169,21 +6,7 @@ h6 {
   --background-color-2: #fff;
   --font-family: "Inter", sans-serif; /* Fonte ativa: Inter */
 }
-/* Utils */
-/* 
- * The .visually-hidden class is used to hide elements visually while keeping them accessible to screen readers.
- */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+
 /* Estilos */
 
 body {
@@ -292,10 +115,11 @@ body {
 
 .burger-menu {
   position: absolute;
-  bottom: 20px;
-  left: 3.5rem; /* Ajuste de posição horizontal */
+  bottom: 1.25rem;
+  left: 50%;
   width: 3rem;
   height: 30px;
+  transform: translateX(-50%);
   display: inline-block;
   cursor: pointer;
 }
@@ -403,22 +227,14 @@ body {
   pointer-events: none;
 }
 
-/* Estilo do título */
-/* Estilo para titulo segundário */
-.title-large {
-  font-weight: 700; /* Texto em negrito */
-  font-size: 2.5rem; /* Tamanho da fonte */
-  line-height: 3.5rem; /* Altura da linha */
-  letter-spacing: -0.025em; /* Espaçamento entre letras */
+.hero__title {
   margin-bottom: 1.5rem;
 }
-/* Estilo dos parágrafos */
-.body-text {
-  font-weight: 400; /* Peso regular da fonte */
-  font-size: 1.125rem; /* Tamanho da fonte */
-  line-height: 2rem; /* Altura da linha */
-  letter-spacing: -0.025em; 
+.hero__text {
 }
+
+
+
 /* Estilo dos botões */
 a {
   display: inline-block; /* Exibe como bloco inline */
