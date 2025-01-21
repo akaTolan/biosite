@@ -1,14 +1,22 @@
-/* Variaveis  */
+/* VARIAVEIS  */
+/* **************** */
+/* **************** */
 :root {
-  --text-color-0: #fff;
+  --text-color-0: #FFF;
   --background-color-0: #000;
   --text-color-1: #000;
-  --background-color-2: #fff;
+  --background-color-1: #FFF;
+  --burguer-color: #D9D9D9;
+  --burguer-color-hover: #FFF;
+  --focus-ring-color-0: #794CFF;
+  --focus-ring-color-1: #FFF;
+  --border-color-0: #D7D7D7;
   --font-family: "Inter", sans-serif; /* Fonte ativa: Inter */
 }
 
-/* Estilos */
-
+/* ESTILOS GERAIS */
+/* **************** */
+/* **************** */
 body {
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
@@ -24,26 +32,45 @@ body {
   font-style: normal;
   font-size: 100%; /* Tamanho da fonte igual a 16px */
 }
+
+input:focus-visible, button:focus-visible, textarea:focus-visible, select:focus-visible, a:focus-visible {
+  outline: none;
+  outline-color: transparent;
+  outline-style: none;
+  outline-width: 0px;
+  box-shadow: inset 0 0 0 2px var(--focus-ring-color-1), 0 0 0 2px var(--focus-ring-color-0);
+}
+
 .wrapper {
   position: relative;
   min-height: 100%;
 }
 
+.main-content {
+  display: flex; /* Flexbox para alinhar conteúdo */
+  flex-direction: column; /* Alinha o conteúdo na vertical */
+  height: 100%;
+}
+
+/* ESTILOS SECTIONS */
+/* **************** */
+/* **************** */
+
 /* Adição de overlay branco com fade-out */
-.intro-overlay {
+.introduction {
   position: fixed; /* Cobre todo o viewport */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--background-color-2); /* Fundo branco */
+  background-color: var(--background-color-1); /* Fundo branco */
   z-index: 100; /* Fica acima de todos os elementos */
   opacity: 1; /* Totalmente opaco no início */
   transition: opacity 2s ease-out; /* Transição suave para transparência */
 }
 
 /* Estilo do texto que aparece inicialmente centrado */
-.intro-text {
+.introduction .introduction__text {
   position: absolute;
   top: 50%; /* Centraliza verticalmente */
   left: 50%; /* Centraliza horizontalmente */
@@ -63,7 +90,7 @@ body {
   height: auto;
 }
 /* Estilo do Logo que aparece por cima de tudo no topo */
-.header-logo {
+.header .header__logo {
   /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
   position: absolute; /*  Permite posicionamento livre */
   left: 3.5rem; /* Ajusta a posição à esquerda */
@@ -72,7 +99,7 @@ body {
   z-index: 10; /* Garante que o logótipo fica acima de outros elementos */
 }
 /* Estilo do texto que aparece na lombada vertical */
-.header-text {
+.header .header__text {
   /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
   position: absolute; /*  Permite posicionamento livre */
   right: 5%; /* Ajusta a posição à direita */
@@ -85,7 +112,6 @@ body {
   white-space: nowrap; /* Impede a quebra de texto em espaços */
 }
 
-/* Estilo para o container principal */
 .hero {
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
@@ -113,145 +139,81 @@ body {
   width: 100%;
 }
 
-.burger-menu {
+.hero .hero__title {
+  margin-bottom: 1.5rem;
+}
+.hero .hero__text {
+}
+
+.hero .burger-menu {
   position: absolute;
+  background-color: transparent;
+  pointer-events: visible;
+  cursor: pointer;
   bottom: 1.25rem;
   left: 50%;
   width: 3rem;
   height: 30px;
-  transform: translateX(-50%);
   display: inline-block;
   cursor: pointer;
+  transform: translateX(-50%);
 }
 
-.burger-menu span {
+.hero .burger-menu span {
   display: block;
   height: 0.1875rem;
   width: 100%;
-  background-color: var(--background-color-2);
+  background-color: var(--burguer-color);
   margin-bottom: 6px;
   border-radius: 2px;
-  transform: translateX(-50%);
   transition: 0.3s ease;
 }
 
-.burger-menu span:last-child {
+.hero .burger-menu span:last-child {
   margin-bottom: 0;
 }
 
 /* Efeito ao passar o mouse */
-.burger-menu:hover span {
-  background-color: #ccc;
+.hero .burger-menu:hover span {
+  background-color: var(--burguer-color-hover);
 }
 
-.main-content {
+.list {
+  background-color: var(--text-color-0);
+  color: var(--background-color-0);
+  padding: 0 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.list .list__nav {
+  display: flex;
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
-  height: 100%;
+  padding: 5.5rem 3.5rem;
+  width: 100%;
 }
 
-.content-video {
-  position: relative; /* Permite posicionamento livre */
-  width: 100%; /* Largura total */
-  height: 100%; /* Altura total */
-  object-fit: cover; /* Ajusta o vídeo ao tamanho do ecrã */
-}
-
-.video {
-  width: 100%; /* O vídeo ocupa toda a largura do ecrã */
-  aspect-ratio: 16 / 9; /* Mantém a proporção 16:9 */
-  display: block; /* Remove espaços indesejados ao redor do elemento */
-  object-fit: cover; /* Garante que o vídeo preencha o espaço mantendo a proporção */
-}
-/* Estilo para o botão play/pause */
-.play-pause-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.16); /* Círculo branco transparente */
-  border: none;
-  border-radius: 50%;
-  width: 80px; /* Tamanho do botão */
-  height: 80px;
+.list .list__item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  outline: none;
-  z-index: 2;
-  transition: opacity 0.3s ease, background-color 0.3s ease;
-}
-
-.play-pause-btn img {
-  width: 40px; /* Tamanho do ícone */
-  height: 40px;
-  pointer-events: none;
-}
-
-.play-pause-btn.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.video-container:hover .play-pause-btn {
-  opacity: 1; /* Mostrar o botão no hover */
-}
-
-.video-container .pause-btn {
-  position: absolute;
-  right: 10%;
-  bottom: 10%;
-  background-color: rgba(255, 255, 255, 0.16);
-  border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  outline: none;
-  z-index: 2;
-  opacity: 0;
+  padding: 2rem 0;
+  color: var(--text-color-1);
+  background-color: transparent;
+  text-decoration: none;
+  border-bottom: 0.125rem solid var(--border-color-0);
   transition: opacity 0.3s ease;
 }
-
-.video-container:hover .pause-btn {
-  opacity: 1; /* Mostrar o botão no hover */
+.list .list__item:last-child {
+  border-bottom: none;
 }
 
-.video-container .pause-btn img {
-  width: 2.5rem; /* Tamanho do ícone */
-  height: 2.5rem;
-  pointer-events: none;
-}
-
-.hero__title {
-  margin-bottom: 1.5rem;
-}
-.hero__text {
-}
-
-
-
-/* Estilo dos botões */
-a {
-  display: inline-block; /* Exibe como bloco inline */
-  margin-top: 1rem; /* Espaçamento entre o botão e o texto acima */
-  padding: 0.9rem 1.2rem; /* Padding interno do botão DESKTOP */
-  background-color: transparent; /* Fundo transparente */
-  color: #fff; /* Cor do texto */
-  border: 2px solid #fff; /* Borda branca */
-  text-decoration: none; /* Remove sublinhado */
-  font-weight: 400; /* Peso regular da fonte */
-  transition: all 0.3s ease; /* Transição suave em hover */
-}
-/* Estilo hover para os botões */
-a:hover {
-  background-color: #fff; /* Fundo branco em hover */
-  color: #000; /* Texto preto em hover */
-  border: 2px solid #fff; /* Mantém a borda branca */
+.list .list__item:hover {
+  opacity: 0.8;
 }
 
 /* Estilo para a imagem de fundo */
@@ -277,16 +239,7 @@ a:hover {
   filter: brightness(0.2); /* Reduz o brilho para contraste */
 }
 
-.content-links {
-  background-color: var(--text-color-0);
-  color: var(--background-color-0);
-  padding: 5%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 1rem;
-}
+
 
 /* Estilo para a seção de contato */
 .content-contact {
@@ -391,6 +344,12 @@ a:hover {
   background-color: #555; /* Fundo mais claro no hover */
 }
 
+/* Estilos responsivos para ecrãs maiores */
+@media (min-width: 1280px) {
+  .hero-content {
+    max-width: 90%; /* Largura total para ecrãs menores */
+  }
+}
 /* Estilos responsivos para ecrãs menores */
 @media (max-width: 800px) {
   body {
@@ -399,6 +358,7 @@ a:hover {
     text-align: left; /* Texto alinhado à esquerda */
   }
   .hero-content {
+    padding: 1.5rem;
     max-width: 100%; /* Largura total para ecrãs menores */
   }
   .body-text {
@@ -412,3 +372,4 @@ a:hover {
     max-width: 80%; /* Largura ajustada para ecrãs menores */
   }
 }
+

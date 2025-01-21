@@ -15,7 +15,11 @@
     <meta name="description" content="FFF Design Assembly" />
     <title>FFFDA</title>
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="utils.css" />
     <link rel="stylesheet" href="styles.css" />
@@ -23,8 +27,8 @@
   </head>
   <body>
     <!-- Overlay branco para fade-out -->
-    <div class="intro-overlay">
-      <p class="intro-text" aria-label="Inspirational message">
+    <div class="introduction">
+      <p class="introduction__text" aria-details="Inspirational message">
         Every great thing starts with a blank page
       </p>
     </div>
@@ -34,11 +38,11 @@
           src="assets/logo_symbol.svg"
           alt="FFF Design Assembly Logo"
           aria-label="FFF Design Assembly logo"
-          class="header-logo"
+          class="header__logo"
         />
         <h1 class="visually-hidden">FFF Design Assembly</h1>
         <div
-          class="header-text"
+          class="header__text"
           aria-label="Vertical text reading FFF Design Assembly"
         >
           FFF Design Assembly
@@ -59,49 +63,42 @@
               storytelling.<br />
               Let's create something extraordinary together!
             </p>
-          </div>
-          <div class="burger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+            <div class="burger-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
         </section>
-        <section id="videoSection" class="content-video">
-          <div class="video-container">
-            <video
-              id="myVideo"
-              class="video"
-              aria-label="Logo animation looping"
+        <section id="listSection" class="list">
+          <h2 id="menuTitle" class="visually-hidden">Menu de navegação FFF Design Assembly</h2>
+          <nav class="list__nav" aria-labelledby="menuTitle">
+            <a
+              href="#"
+              target="_blank"
+              class="title list__item"
+              aria-label="Visit external link About FFF Design Assembly"
+              >About Us</a
             >
-              <source src="assets/background.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <button id="playPauseButton" class="play-pause-btn">
-              <img src="assets/play_sign.png" alt="Play" id="playPauseIcon" />
-            </button>
-            <!-- O botão de pausa será adicionado dinamicamente pelo JavaScript -->
-          </div>
-        </section>
-        <section class="content-links">
-          <h2 class="visually-hidden">Menu de navegação FFF Design Assembly</h2>
-          <a
-            href="https://www.linkedin.com/company/fffdesignassembly"
+            <a
+            href="#"
             target="_blank"
-            aria-label="Visit FFF Design Assembly on LinkedIn"
-            >LinkedIn</a
-          >
-          <a
-            href="https://www.instagram.com/fffdesignassembly"
+            class="title list__item"
+            aria-label="Visit external link About Projects & Case studies"
+            >Projects & Case studies</a>
+            <a
+            href="#"
             target="_blank"
-            aria-label="Visit FFF Design Assembly on Instagram"
-            >Instagram</a
-          >
-          <a
-            href="https://www.facebook.com/fffdesignassembly"
+            class="title list__item"
+            aria-label="Visit external link About AI.cademy"
+            >AI.cademy</a>
+            <a
+            href="#"
             target="_blank"
-            aria-label="Visit FFF Design Assembly on Facebook"
-            >Facebook</a
-          >
+            class="title list__item"
+            aria-label="Visit external link About Design System Standards"
+            >Design System Standards</a>
+          </nav>
         </section>
         <section class="content-contact">
           <div class="contact-wrapper">

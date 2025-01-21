@@ -1,15 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const overlay = document.querySelector(".intro-overlay");
+  const overlay = document.querySelector(".introduction");
   const centeredText = document.querySelector(".intro-text");
 
   const burgerMenu = document.querySelector(".burger-menu");
-  const videoSection = document.getElementById("videoSection");
-  const video = document.getElementById("myVideo");
-
-  const playPauseButton = document.getElementById("playPauseButton");
-  const playPauseIcon = document.getElementById("playPauseIcon");
-  const pauseButton = document.createElement("button"); // Cria o botão de pausa
-  const pauseIcon = document.createElement("img");
+  const listSection = document.getElementById("listSection");
 
   // Faz o texto desaparecer primeiro
   setTimeout(() => {
@@ -24,49 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, 2800); // Tempo total antes do fade-out do overlay
 
-  // Configura o botão de pausa
-  pauseButton.classList.add("pause-btn");
-  pauseIcon.src = "assets/pause_sign.png";
-  pauseIcon.alt = "Pause";
-  pauseButton.appendChild(pauseIcon);
-  document.querySelector(".video-container").appendChild(pauseButton);
 
   burgerMenu.addEventListener("click", () => {
     // Faz o scroll suave até a seção de vídeo
-    videoSection.scrollIntoView({ behavior: "smooth" });
-
-    // Toca o vídeo quando a seção é alcançada
-    video.play();
-  });
-
-  function toggleVideo() {
-    if (video.paused) {
-      video.play();
-      playPauseIcon.src = "assets/pause_sign.png";
-      playPauseButton.classList.add("hidden"); // Esconde o botão play
-    } else {
-      video.pause();
-      playPauseIcon.src = "assets/play_sign.png";
-      playPauseButton.classList.remove("hidden"); // Mostra o botão play
-    }
-  }
-
-  // Botão play/pause no centro
-  playPauseButton.addEventListener("click", () => {
-    toggleVideo();
-  });
-
-  // Botão pausa no canto
-  pauseButton.addEventListener("click", () => {
-    toggleVideo();
-  });
-
-  // Mostrar/ocultar os botões no hover
-  video.addEventListener("play", () => {
-    playPauseButton.classList.add("hidden"); // Esconde o botão play
-  });
-
-  video.addEventListener("pause", () => {
-    playPauseButton.classList.remove("hidden"); // Mostra o botão play
+    listSection.scrollIntoView({ behavior: "smooth" });
   });
 });

@@ -1,33 +1,29 @@
 /* Title Large */
 .title-large {
   font-weight: 700; /* Bold */
-  font-size: clamp(28px, 4vw, 40px); /* Tamanho fluido entre 28px e 40px */
-  line-height: clamp(40px, 5vw, 56px); /* Linha fluida entre 40px e 56px */
-  letter-spacing: -2.5%; /* Negative letter spacing */
+  font-size: clamp(1.75rem, 4vw, 2.5rem); /* Tamanho fluido entre 28px e 40px */
+  line-height: clamp(2.5rem, 5vw, 3.5rem); /* Linha fluida entre 40px e 56px */
 }
 
 /* Title */
 .title {
   font-weight: 700; /* Bold */
-  font-size: clamp(24px, 3vw, 28px);
-  line-height: clamp(32px, 4vw, 40px);
-  letter-spacing: -2.5%; /* Negative letter spacing */
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  line-height: clamp(2rem, 4vw, 2.5rem);
 }
 
 /* Title Small */
 .title-small {
   font-weight: 700; /* Bold */
-  font-size: clamp(18px, 2.5vw, 24px);
-  line-height: clamp(24px, 3vw, 40px); 
-  letter-spacing: -2.5%; /* Negative letter spacing */
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  line-height: clamp(1.5rem, 3vw, 2.5rem); 
 }
 
 /* Body */
 .body {
   font-weight: 400; /* Regular */
-  font-size: clamp(16px, 2vw, 18px);
-  line-height: clamp(20px, 2.5vw, 32px);
-  letter-spacing: -2.5%; /* Negative letter spacing */
+  font-size: 1.125rem;
+  line-height: 2rem;
 }
 
 /* Body Small */
@@ -35,5 +31,4 @@
   font-weight: 400; /* Regular */
   font-size: 16px; /* Font size */
   line-height: 24px; /* Line height */
-  letter-spacing: -2.5%; /* Negative letter spacing */
 }
