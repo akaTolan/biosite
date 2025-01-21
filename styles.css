@@ -264,10 +264,11 @@ input:focus-visible, button:focus-visible, textarea:focus-visible, select:focus-
   outline-style: none;
   outline-width: 0px;
   box-shadow: inset 0 0 0 2px var(--focus-ring-color-1), 0 0 0 2px var(--focus-ring-color-0);
-
 }
+/* Section Contact */
+/*****************/
 
-.content-footer {
+.footer {
   padding: 5%;
   width: 100%;
   display: flex;
@@ -276,54 +277,57 @@ input:focus-visible, button:focus-visible, textarea:focus-visible, select:focus-
   margin-top: 1rem;
 }
 
-.content-links a {
-  color: var(--background-color-0);
-}
-
-.footer-content {
-  max-width: 600px;
+.footer .footer__wrapper {
+  max-width: 80%;
   margin: 0 auto; /* Centraliza o conteúdo */
   text-align: center; /* Alinha o texto ao centro */
 }
 
-.footer-text {
-  font-size: 1rem; /* Tamanho do texto */
-  font-weight: 400; /* Peso regular */
-  margin-bottom: 2rem; /* Espaço abaixo do texto */
-  line-height: 1.5;
+.footer .footer__text {
+  margin-bottom: 4rem;
 }
 
-.footer-logo {
-  background-color: #ccc;
+.footer .footer__logo {
   width: 150px; /* Tamanho do logotipo */
   height: auto; /* Mantém a proporção */
-  margin: auto; /* Espaço acima e abaixo */
+  margin: 0 auto; /* Espaço acima e abaixo */
+  margin-bottom: 4rem;
 }
 
-.social-icons {
+.footer .footer__social-icons {
   display: flex;
   justify-content: center;
-  gap: 1rem; /* Espaçamento entre os ícones */
+  gap: 1.5rem; /* Espaçamento entre os ícones */
   margin-top: 1rem;
 }
 
-.social-icon {
-  display: inline-block;
-  width: 50px; /* Placeholder para o ícone */
-  height: 50px; /* Placeholder para o ícone */
-  background-color: #444; /* Fundo placeholder cinza escuro */
-  color: #fff; /* Texto placeholder branco */
+.footer .footer__social-icon {
+  position: relative;
+  width: 4.5rem; /* Placeholder para o ícone */
+  height: 4.5rem; /* Placeholder para o ícone */
+  background-color: rgba(255, 255, 255, 0.16); /* Fundo placeholder cinza escuro */
+  color: var(--text-color-0); /* Texto placeholder branco */
   border-radius: 50%; /* Torna os ícones redondos */
-  font-size: 0.75rem; /* Texto pequeno */
-  font-weight: bold;
-  text-align: center;
-  line-height: 50px; /* Centraliza o texto verticalmente */
   text-decoration: none; /* Remove o sublinhado */
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.social-icon:hover {
-  background-color: #555; /* Fundo mais claro no hover */
+.footer .footer__social-icon:hover {
+  outline: none;
+  outline-color: transparent;
+  outline-style: none;
+  outline-width: 0px;
+  box-shadow: inset 0 0 0 2px var(--focus-ring-color-1), 0 0 0 2px var(--focus-ring-color-0);
+
+}
+
+.footer .footer__social-icon img {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 2.6875rem; /* Tamanho da imagem */
+  height: auto; /* Mantém a proporção */
 }
 
 /* Estilos responsivos para ecrãs maiores */
