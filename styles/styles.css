@@ -218,7 +218,7 @@ input:focus-visible, button:focus-visible, textarea:focus-visible, select:focus-
 }
 
 .list .list__item:hover {
-  opacity: 0.8;
+  opacity: 0.55;
 }
 
 /* Section Contact */
@@ -259,11 +259,7 @@ input:focus-visible, button:focus-visible, textarea:focus-visible, select:focus-
 }
 
 .contact .contact__button:hover {
-  outline: none;
-  outline-color: transparent;
-  outline-style: none;
-  outline-width: 0px;
-  box-shadow: inset 0 0 0 2px var(--focus-ring-color-1), 0 0 0 2px var(--focus-ring-color-0);
+  background-color: rgba(255, 255, 255, 0.26);
 }
 /* Section Contact */
 /*****************/
@@ -313,12 +309,7 @@ input:focus-visible, button:focus-visible, textarea:focus-visible, select:focus-
 }
 
 .footer .footer__social-icon:hover {
-  outline: none;
-  outline-color: transparent;
-  outline-style: none;
-  outline-width: 0px;
-  box-shadow: inset 0 0 0 2px var(--focus-ring-color-1), 0 0 0 2px var(--focus-ring-color-0);
-
+  background-color: rgba(255, 255, 255, 0.26);
 }
 
 .footer .footer__social-icon img {
