@@ -33,6 +33,7 @@ body {
   font-size: 100%; /* Tamanho da fonte igual a 16px */
 }
 
+/* Estilo do focus de todos os elementos interactivos */
 input:focus-visible,
 button:focus-visible,
 textarea:focus-visible,
@@ -159,7 +160,6 @@ a:focus-visible {
   background-color: transparent;
   pointer-events: visible;
   cursor: pointer;
-  width: 100%;
   margin-top: 3rem;
 }
 
@@ -324,17 +324,17 @@ a:focus-visible {
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  width: 2.6875rem; /* Tamanho da imagem */
+  width: 1.6875rem; /* Tamanho da imagem */
   height: auto; /* Mantém a proporção */
 }
 
+/* ESTILOS RESPONSIVOS */
+/***********************/
+/* Mobile first strategy */
 /* XL: 1366px (Large desktops)
 L: 1024px (Small desktops and tablets)
 M:  768px (Tablets)
 S: 480px (Mobile phones and other small devices) */
-
-/* Estilos responsivos para ecrãs menores */
-/* MOBILE FIRST STRATEGY */
 
 /* override p/ tablets e desktop */
 @media (min-width: 768px) {

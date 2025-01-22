@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const centeredText = document.querySelector(".introduction__text");
 
   const burgerMenu = document.querySelector(".burger-menu");
-  const listSection = document.getElementById("listSection");
+  const listSection = document.getElementById("list");
 
   // Faz o texto desaparecer primeiro
   setTimeout(() => {
@@ -19,8 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 2800); // Tempo total antes do fade-out do overlay
 
 
-  burgerMenu.addEventListener("click", () => {
-    // Faz o scroll suave até a seção de vídeo
-    listSection.scrollIntoView({ behavior: "smooth" });
-  });
+  // const handleBurgerMenuAction = () => {
+  //   listSection.scrollIntoView({ behavior: "smooth" });
+  // };
+
+  // burgerMenu.addEventListener("click", handleBurgerMenuAction);
+  // burgerMenu.addEventListener("keydown", (event) => {
+  //   if (event.key === "Enter") {
+  //     handleBurgerMenuAction();
+  //   }
+  // });
 });
