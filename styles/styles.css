@@ -77,12 +77,11 @@ a:focus-visible {
 /* Estilo do texto que aparece inicialmente centrado */
 .introduction .introduction__text {
   position: absolute;
+  width: 60%;
   top: 50%; /* Centraliza verticalmente */
   left: 50%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Ajusta o alinhamento central */
-  color: #000; /* Texto preto */
-  font-size: 1.2rem; /* Mesmo tamanho do parágrafo */
-  font-weight: 400; /* Mesmo peso do parágrafo */
+  color: var(--text-color-1); /* Texto preto */  
   text-align: center; /* Alinha o texto no centro */
   opacity: 1; /* Totalmente opaco inicialmente */
   transition: opacity 1s ease-out; /* Transição suave para transparência */
