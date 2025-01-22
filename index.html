@@ -5,14 +5,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Meta description para SEO -->
-    <meta name="description" content="FFF Design Assem1ly" />
+    <meta name="description" content="FFF Design Assembly - Empowering teams with AI-driven design strategies, workshops, consultancy, and mentoring." />
+    
+    <!-- Meta keywords para SEO -->
+    <meta name="keywords" content="FFF Design Assembly, AI, design strategies, workshops, consultancy, mentoring, UX/UI, branding, advertising, illustration, design systems" />
+    
+    <!-- Meta author para SEO -->
+    <meta name="author" content="FFF Design Assembly" />
+    
+    <!-- Open Graph meta tags para melhor compartilhamento em redes sociais -->
+    <meta property="og:title" content="FFF Design Assembly" />
+    <meta property="og:description" content="Empowering teams with AI-driven design strategies, workshops, consultancy, and mentoring." />
+    <meta property="og:image" content="assets/og-image.png" />
+    <meta property="og:url" content="https://www.fffdassembly.com" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card meta tags para melhor compartilhamento no Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FFF Design Assembly" />
+    <meta name="twitter:description" content="Empowering teams with AI-driven design strategies, workshops, consultancy, and mentoring." />
+    <meta name="twitter:image" content="assets/twitter-image.png" />
     <title>FFFDA</title>
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png" />
     <link
@@ -20,18 +39,18 @@
       sizes="180x180"
       href="assets/apple-touch-icon.png"
     />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="utils.css" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="typography.css" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/utils.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/typography.css" />
   </head>
   <body>
-    <!-- Overlay branco para fade-out -->
-    <div class="introduction">
+    <!-- Intro section -->
+    <section class="introduction">
       <p class="introduction__text" aria-details="Inspirational message">
         Every great thing starts with a blank page
       </p>
-    </div>
+    </section>
     <div class="wrapper">
       <header class="header">
         <img
@@ -50,7 +69,7 @@
       </header>
       <main class="main-content">
         <section class="hero">
-          <div class="hero-content">
+          <div class="hero__wrapper">
             <h2 class="hero__title title-large">
               At FFF Design Assembly (FFFDA), with a passion for design and
               powered by AI, we create strategies, workshops, consultancy and
@@ -71,7 +90,9 @@
           </div>
         </section>
         <section id="listSection" class="list">
-          <h2 id="menuTitle" class="visually-hidden">Menu de navegação FFF Design Assembly</h2>
+          <h2 id="menuTitle" class="visually-hidden">
+            Menu de navegação FFF Design Assembly
+          </h2>
           <nav class="list__nav" aria-labelledby="menuTitle">
             <a
               href="#"
@@ -81,23 +102,26 @@
               >About Us</a
             >
             <a
-            href="#"
-            target="_blank"
-            class="title list__item"
-            aria-label="Visit external link About Projects & Case studies"
-            >Projects & Case studies</a>
+              href="#"
+              target="_blank"
+              class="title list__item"
+              aria-label="Visit external link About Projects & Case studies"
+              >Projects & Case studies</a
+            >
             <a
-            href="#"
-            target="_blank"
-            class="title list__item"
-            aria-label="Visit external link About AI.cademy"
-            >AI.cademy</a>
+              href="#"
+              target="_blank"
+              class="title list__item"
+              aria-label="Visit external link About AI.cademy"
+              >AI.cademy</a
+            >
             <a
-            href="#"
-            target="_blank"
-            class="title list__item"
-            aria-label="Visit external link About Design System Standards"
-            >Design System Standards</a>
+              href="#"
+              target="_blank"
+              class="title list__item"
+              aria-label="Visit external link About Design System Standards"
+              >Design System Standards</a
+            >
           </nav>
         </section>
         <section class="contact">
@@ -106,37 +130,42 @@
             <p class="contact__subtitle body">
               Schedule a call to discuss your ideas
             </p>
-            <a href="#schedule-call" class="contact__button body">BOOK A CALL</a>
+            <a href="#schedule-call" class="contact__button body"
+              >BOOK A CALL</a
+            >
           </div>
         </section>
       </main>
       <footer class="footer">
         <div class="footer__wrapper">
           <p class="footer__text body-small">
-            The FFF Design Assembly (FFFDA) was co-created with proud by<br/> Foan82,
-            Filipe SJ and Friends since 2024.
+            The FFF Design Assembly (FFFDA) was co-created with proud by<br />
+            Foan82, Filipe SJ and Friends since 2024.
           </p>
-          
+
           <img
             src="assets/logo.svg"
             alt="FFF Design Assembly Logo"
             class="footer__logo"
           />
           <div class="footer__social-icons">
-            <a href="#" class="footer__social-icon" aria-label="Go to external link of the Instagram"><img
-              src="assets/instagram.png"
-              alt=""
-              class="footer__logo"
+            <a
+              href="#"
+              class="footer__social-icon"
+              aria-label="Go to external link of the Instagram"
+              ><img src="assets/instagram.png" alt="" class="footer__logo"
             /></a>
-            <a href="#" class="footer__social-icon" aria-label="Go to external link of the Behance"><img
-              src="assets/behance.png"
-              alt=""
-              class="footer__logo"
+            <a
+              href="#"
+              class="footer__social-icon"
+              aria-label="Go to external link of the Behance"
+              ><img src="assets/behance.png" alt="" class="footer__logo"
             /></a>
-            <a href="#" class="footer__social-icon" aria-label="Go to external link of the LinkedIn"><img
-              src="assets/linkedin.png"
-              alt=""
-              class="footer__logo"
+            <a
+              href="#"
+              class="footer__social-icon"
+              aria-label="Go to external link of the LinkedIn"
+              ><img src="assets/linkedin.png" alt="" class="footer__logo"
             /></a>
           </div>
         </div>

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".introduction");
-  const centeredText = document.querySelector(".intro-text");
+  const centeredText = document.querySelector(".introduction__text");
 
   const burgerMenu = document.querySelector(".burger-menu");
   const listSection = document.getElementById("listSection");

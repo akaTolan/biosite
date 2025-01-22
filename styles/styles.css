@@ -128,14 +128,14 @@ input:focus-visible, button:focus-visible, textarea:focus-visible, select:focus-
       rgba(0, 0, 0, 0.6) 60%,
       rgba(0, 0, 0, 1) 100%
     ),
-    url("assets/background.png"); /* Caminho para a imagem de fundo */
+    url("../assets/background.png"); /* Caminho para a imagem de fundo */
   background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
   background-position: center; /* Centraliza a imagem de fundo */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   position: relative; /* Garante posicionamento adequado */
 }
 
-.hero-content {
+.hero .hero__wrapper {
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
   padding: 3.5rem;
@@ -330,32 +330,34 @@ input:focus-visible, button:focus-visible, textarea:focus-visible, select:focus-
   height: auto; /* Mantém a proporção */
 }
 
+/* XL: 1366px (Large desktops)
+L: 1024px (Small desktops and tablets)
+M:  768px (Tablets)
+S: 480px (Mobile phones and other small devices) */
+
 /* Estilos responsivos para ecrãs maiores */
-@media (min-width: 1280px) {
-  .hero-content {
+@media (min-width: 1366px) {
+  .hero__wrapper {
     max-width: 90%; /* Largura total para ecrãs menores */
   }
 }
 /* Estilos responsivos para ecrãs menores */
-@media (max-width: 800px) {
-  body {
-    justify-content: left; /* Alinhamento horizontal ajustado */
-    align-items: center; /* Alinhamento vertical ajustado */
-    text-align: left; /* Texto alinhado à esquerda */
-  }
-  .hero-content {
+@media (max-width: 768px) {
+  .hero__wrapper {
     padding: 1.5rem;
     max-width: 100%; /* Largura total para ecrãs menores */
   }
-  .body-text {
-    font-size: 1rem; /* Reduz tamanho da fonte para dispositivos menores */
-  }
-  a {
-    padding: 0.8rem 1rem; /* Padding interno (mais reduzido) no botão MOBILE */
-  }
-  .content {
-    margin-top: 8rem;
-    max-width: 80%; /* Largura ajustada para ecrãs menores */
-  }
 }
+
+@media (max-width: 480px) {
+  .hero {
+    height: max-content;
+  }
+
+  .hero__wrapper {
+    margin-top: 30%;
+  }
+ 
+}
+
 
