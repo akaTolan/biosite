@@ -100,6 +100,7 @@ a:focus-visible {
   /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
   position: absolute; /*  Permite posicionamento livre */
   left: 3.5rem; /* Ajusta a posição à esquerda */
+  left: calc(5% + 1rem);
   width: 40px; /* Ajuste conforme necessário */
   height: auto; /* Mantém a proporção */
   z-index: 10; /* Garante que o logótipo fica acima de outros elementos */
@@ -108,7 +109,7 @@ a:focus-visible {
 .header .header__text {
   /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
   position: absolute; /*  Permite posicionamento livre */
-  right: 5%; /* Ajusta a posição à direita */
+  right: calc(5% + 1rem);
   writing-mode: vertical-rl; /* Orientação do texto na vertical */
   transform: rotate(360deg); /* Ajusta para leitura de cima para baixo */
   font-size: 0.6rem; /* Texto menor que o parágrafo */
@@ -151,8 +152,6 @@ a:focus-visible {
 
 .hero .hero__title {
   margin-bottom: 1.5rem;
-}
-.hero .hero__text {
 }
 
 .hero .burger-menu {
@@ -340,6 +339,12 @@ S: 480px (Mobile phones and other small devices) */
 
 /* override p/ tablets e desktop */
 @media (min-width: 768px) {
+  .header .header__logo {
+    left: 3.5rem;
+  }
+  .header .header__text {
+    right: 5%;
+  }
   .hero {
     height: 100vh;
   }
