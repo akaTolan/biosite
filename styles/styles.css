@@ -47,6 +47,11 @@ a:focus-visible {
     0 0 0 2px var(--focus-ring-color-0);
 }
 
+a {
+  color: var(--text-color-0);
+  text-decoration: none;
+}
+
 .wrapper {
   position: relative;
   min-height: 100%;
