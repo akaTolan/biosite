@@ -221,7 +221,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 1rem;
+  /*margin-top: 1rem; */
 }
 
 .list .list__nav {
@@ -254,7 +254,7 @@ a {
 /* Section Contact */
 /*****************/
 .contact {
-  padding: 4rem 1rem; /* Espaçamento interno */
+  padding: 4rem 1rem 0rem 1rem; /* Espaçamento interno */
   background-color: var(--background-color-0); /* Fundo preto */
   color: var(--text-color-0); /* Texto branco */
   text-align: center;
