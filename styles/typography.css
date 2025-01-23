@@ -1,14 +1,14 @@
 /* Title Large */
 .title-large {
   font-weight: 700; /* Bold */
-  font-size: clamp(1.75rem, 4vw, 2.5rem); /* Tamanho fluido entre 28px e 40px */
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* Tamanho fluido entre 28px e 40px */
   line-height: clamp(2rem, 5vw, 3.5rem); /* Linha fluida entre 40px e 56px */
 }
 
 /* Title */
 .title {
   font-weight: 700; /* Bold */
-  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   line-height: clamp(1.5rem, 4vw, 2.5rem);
 }
 
