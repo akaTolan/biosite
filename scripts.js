@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".introduction");
   const centeredText = document.querySelector(".introduction__text");
+  const hero = document.querySelector(".hero");
+  const heroImage = document.querySelector(".backround-image");
 
-  // Faz o texto desaparecer primeiro
+  const isMobileDevice = () =>
+    /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+
+  // Introduction animation
   setTimeout(() => {
     centeredText.style.opacity = "0"; // Inicia o fade-out do texto
   }, 1600); // Metade do tempo do fade-out do overlay
@@ -15,29 +20,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, 2800); // Tempo total antes do fade-out do overlay
 
-});
+  if (!isMobileDevice()) {
+    // Cria o elemento <video>
+    const heroVideo = document.createElement("video");
+    heroVideo.classList.add("background-video");
+    heroVideo.autoplay = true;
+    heroVideo.muted = true;
+    heroVideo.loop = true;
+    heroVideo.playsInline = true;
+    heroVideo.src = "./assets/background.mp4";
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Seleciona o elemento Hero
-  const hero = document.querySelector(".hero");
+    // Adiciona o vídeo ao container Hero
+    heroVideo.addEventListener("canplaythrough", () => {
+      hero.appendChild(heroVideo); // Adiciona o vídeo ao Hero
+      heroImage.style.opacity = "0";
+    });
 
-  // Cria o elemento <video>
-  const video = document.createElement("video");
-  video.classList.add("background-video");
-  video.autoplay = true;
-  video.muted = true;
-  video.loop = true;
-  video.playsInline = true;
-  video.src = "../assets/background.mp4"; // Caminho do vídeo
-
-  // Adiciona o vídeo ao container Hero
-  video.addEventListener("canplaythrough", () => {
-    hero.appendChild(video); // Adiciona o vídeo ao Hero
-    hero.style.backgroundImage = "none"; // Remove o background estático
-  });
-
-  // Exibe erro no console se houver falha ao carregar o vídeo
-  video.addEventListener("error", () => {
-    console.error("Erro ao carregar o vídeo de fundo.");
-  });
+    heroVideo.addEventListener("error", () => {
+      console.error("Erro ao carregar o vídeo de fundo.");
+    });
+  }
 });

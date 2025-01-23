@@ -87,7 +87,7 @@ a {
   top: 50%; /* Centraliza verticalmente */
   left: 50%; /* Centraliza horizontalmente */
   transform: translate(-50%, -50%); /* Ajusta o alinhamento central */
-  color: var(--text-color-1); /* Texto preto */  
+  color: var(--text-color-1); /* Texto preto */
   text-align: center; /* Alinha o texto no centro */
   opacity: 1; /* Totalmente opaco inicialmente */
   transition: opacity 1s ease-out; /* Transição suave para transparência */
@@ -126,8 +126,8 @@ a {
 
 /* Section Hero */
 /*****************/
-
 .hero {
+  position: relative;
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
   justify-content: center; /* Alinha o conteúdo verticalmente ao centro */
@@ -137,44 +137,41 @@ a {
   height: fit-content;
   min-height: 100vh;
   background-image: radial-gradient(
-      circle,
-      rgba(0, 0, 0, 0.6) 60%,
-      rgba(0, 0, 0, 1) 100%
-    ),
-    url("../assets/background.png"); /* Caminho para a imagem de fundo */
-  background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
-  background-position: center; /* Centraliza a imagem de fundo */
-  background-repeat: no-repeat; /* Evita que a imagem se repita */
-  position: relative; /* Garante posicionamento adequado */
+    circle,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
-.hero::before {
-  content: ""; /* Elemento pseudo para o vídeo */
+.hero .backround-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -3; /* (-1 ou -3) Elemento pseudo para o vídeo */
-  background: url("../assets/background.png") no-repeat center center / cover; /* Imagem de fallback */
+  z-index: -10;
+  background-image: url("../assets/background.png"); /* Caminho para a imagem de fundo */
+  background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
+  background-position: center; /* Centraliza a imagem de fundo */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  transition: opacity 5s ease-in-out;
 }
 
-.background-video {
+.hero .background-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover; /* Faz com que o vídeo ocupe toda a área */
-  z-index: -2; /* (-1 ou -2) Envia para trás do conteúdo */
-  display: block; /* (none ou simplesmente comentar) Garante que o vídeo seja exibido */
+  z-index: -20; /* (-1 ou -2) Envia para trás do conteúdo */
 }
 
 .hero .hero__wrapper {
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
   padding: 1rem;
-  margin-top: 320px;
+  margin-top: 20rem;
   width: 100%;
 }
 
@@ -221,14 +218,13 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /*margin-top: 1rem; */
 }
 
 .list .list__nav {
   display: flex;
   display: flex; /* Flexbox para alinhar conteúdo */
   flex-direction: column; /* Alinha o conteúdo na vertical */
-  padding: 5.5rem 3.5rem;
+  padding: 3rem 1rem;
   width: 100%;
 }
 
@@ -386,6 +382,10 @@ S: 480px (Mobile phones and other small devices) */
     left: 50%;
     height: 30px;
     transform: translateX(-50%);
+  }
+
+  .list .list__nav {
+    padding: 5.5rem 3.5rem;
   }
 }
 
