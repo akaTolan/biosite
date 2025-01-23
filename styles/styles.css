@@ -49,7 +49,6 @@ a:focus-visible {
 
 a {
   color: var(--text-color-0);
-  text-decoration: none;
 }
 
 .wrapper {
