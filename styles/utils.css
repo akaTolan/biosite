@@ -14,6 +14,10 @@
   border: 0;
 }
 
+.hidden {
+  opacity:0;
+}
+
 .save-touch-target {
     display: flex;
     align-items: center;

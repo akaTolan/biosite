@@ -60,13 +60,20 @@
   </head>
   <body>
     <!-- Intro section -->
-    <section class="introduction">
-      <p class="introduction__text body" aria-label="Inspirational message">
-        Every great thing starts with a blank page
-      </p>
+    <section
+      class="introduction"
+      aria-label="Introduction animation with a inspiring message"
+    >
+      <h1
+        class="introduction__text"
+        aria-label="Every great thing starts with a blank page"
+      >
+        <span id="text" class="body"></span>
+        <span class="introduction__underscore body" id="console">&#95;</span>
+      </h1>
     </section>
-    <div class="wrapper">
-      <header class="header">
+    <div class="content" aria-hidden="true">
+      <header class="header" aria-label="FFF Design Assembly header">
         <a class="screen-reader-link body-small" href="#list">
           skip to content
         </a>
@@ -75,8 +82,7 @@
         </a>
         <img
           src="assets/logo_symbol.svg"
-          alt="FFF Design Assembly Logo"
-          aria-label="FFF Design Assembly logo"
+          alt="FFF Design Assembly logo featuring a stylized ‘F’ symbol in white, representing modern design and innovation, placed on a dark background"
           class="header__logo"
         />
         <h1 class="visually-hidden">FFF Design Assembly</h1>
@@ -87,9 +93,12 @@
           FFF Design Assembly
         </div>
       </header>
-      <main class="main-content">
+      <main
+        class="main-content"
+        aria-label="Main content of FFF Design Assembly"
+      >
         <section class="hero">
-          <div class="backround-image"></div>
+          <div class="backround-image" aria-hidden="true"></div>
           <div class="hero__wrapper">
             <h2 class="hero__title title-large">
               At FFF Design Assembly, with a passion for design and powered by
@@ -115,38 +124,53 @@
           </div>
         </section>
         <section id="list" class="list">
-          <h2 id="menuTitle" class="visually-hidden">
-            FFF Design Assembly main navigation
-          </h2>
+          
           <nav class="list__nav" aria-labelledby="menuTitle">
-            <a
-              href="https://docs.google.com/presentation/d/14P0JZk6URoxuOo20e49TV9icUQOPaEqEGVgG4PZ8NIU/edit?usp=sharing"
-              target="_blank"
-              class="title list__item"
-              aria-label="Visit external link About FFF Design Assembly"
-              >About Us</a
-            >
-            <a
-              href="https://www.behance.net/FFFDesignAssembly"
-              target="_blank"
-              class="title list__item"
-              aria-label="Visit external link About Projects & Case studies"
-              >Projects & Case studies</a
-            >
-            <a
-              href="https://foan82.notion.site/c360281047384d3589b7e066f7496445?v=8d508b095d6f46d4a398fea14dc20105"
-              target="_blank"
-              class="title list__item"
-              aria-label="Visit external link About AI.cademy"
-              >AI Research</a
-            >
-            <a
-              href="https://designsystemstandards.com"
-              target="_blank"
-              class="title list__item"
-              aria-label="Visit external link About Design System Standards"
-              >Design System Standards</a
-            >
+            <h2 id="menuTitle" class="visually-hidden">
+              FFF Design Assembly main navigation
+            </h2>
+            <ol >
+              <li class="list__item" aria-labelledby="listItem_0">
+                <a
+                  id="listItem_0"
+                  href="https://docs.google.com/presentation/d/14P0JZk6URoxuOo20e49TV9icUQOPaEqEGVgG4PZ8NIU/edit?usp=sharing"
+                  target="_blank"
+                  class="title"
+                  aria-label="Visit external link About FFF Design Assembly"
+                  >About Us</a
+                >
+              </li>
+              <li class="list__item" aria-labelledby="listItem_1">
+                <a
+                  id="listItem_1"
+                  href="https://www.behance.net/FFFDesignAssembly"
+                  target="_blank"
+                  class="title"
+                  aria-label="Visit external link About Projects & Case studies"
+                  >Projects & Case studies</a
+                >
+              </li>
+              <li class="list__item" aria-labelledby="listItem_2">
+                <a
+                  id="listItem_2"
+                  href="https://foan82.notion.site/c360281047384d3589b7e066f7496445?v=8d508b095d6f46d4a398fea14dc20105"
+                  target="_blank"
+                  class="title"
+                  aria-label="Visit external link About AI.cademy"
+                  >AI Research</a
+                >
+              </li>
+              <li class="list__item" aria-labelledby="listItem_3">
+                <a
+                  id="listItem_3"
+                  href="https://designsystemstandards.com"
+                  target="_blank"
+                  class="title"
+                  aria-label="Visit external link About Design System Standards"
+                  >Design System Standards</a
+                >
+              </li>
+            </ol>
           </nav>
         </section>
         <section class="contact">
@@ -168,7 +192,11 @@
           </div>
         </section>
       </main>
-      <footer id="footer" class="footer">
+      <footer
+        id="footer"
+        class="footer"
+        aria-label="Footer of FFF Design Assembly"
+      >
         <div class="footer__wrapper">
           <p class="footer__text body-small">
             The FFF Design Assembly (FFFDA) was co-created with proud by<br />
@@ -187,19 +215,19 @@
               href="https://www.instagram.com/fff.design.assembly"
               class="footer__social-icon"
               aria-label="Go to external link of the Instagram"
-              ><img src="assets/instagram.png" alt="" class="footer__logo"
+              ><img src="assets/instagram.png" role="presentation" class="footer__logo"
             /></a>
             <a
               href="https://www.behance.net/FFFDesignAssembly"
               class="footer__social-icon"
               aria-label="Go to external link of the Behance"
-              ><img src="assets/behance.png" alt="" class="footer__logo"
+              ><img src="assets/behance.png" role="presentation" class="footer__logo"
             /></a>
             <a
               href="https://www.linkedin.com/company/fffdesignassembly"
               class="footer__social-icon"
               aria-label="Go to external link of the LinkedIn"
-              ><img src="assets/linkedin.png" alt="" class="footer__logo"
+              ><img src="assets/linkedin.png" role="presentation" class="footer__logo"
             /></a>
           </div>
         </div>
