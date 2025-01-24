@@ -20,24 +20,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, 2800); // Tempo total antes do fade-out do overlay
 
-  if (!isMobileDevice()) {
-    // Cria o elemento <video>
-    const heroVideo = document.createElement("video");
-    heroVideo.classList.add("background-video");
-    heroVideo.autoplay = true;
-    heroVideo.muted = true;
-    heroVideo.loop = true;
-    heroVideo.playsInline = true;
-    heroVideo.src = "./assets/background.mp4";
+  // Cria o elemento <video>
+  const heroVideo = document.createElement("video");
+  heroVideo.classList.add("background-video");
+  heroVideo.autoplay = true;
+  heroVideo.muted = true;
+  heroVideo.loop = true;
+  heroVideo.playsInline = true;
 
-    // Adiciona o vídeo ao container Hero
-    heroVideo.addEventListener("canplaythrough", () => {
-      hero.appendChild(heroVideo); // Adiciona o vídeo ao Hero
-      heroImage.style.opacity = "0";
-    });
-
-    heroVideo.addEventListener("error", () => {
-      console.error("Erro ao carregar o vídeo de fundo.");
-    });
+  if (isMobileDevice()) {
+    heroImage.style.backgroundImage = "url('../assets/background-mobile.png')";
+    heroVideo.src = "./assets/background-mobile.mp4";
+  } else {
+    heroImage.style.backgroundImage = "url('../assets/background-desktop.png')";
+    heroVideo.src = "./assets/background-desktop.mp4";
   }
+
+  heroVideo.addEventListener("canplaythrough", () => {
+    hero.appendChild(heroVideo); // Adiciona o vídeo ao Hero
+    heroImage.style.opacity = "0";
+  });
+
+  heroVideo.addEventListener("error", () => {
+    console.error("Erro ao carregar o vídeo de fundo.");
+  });
 });
