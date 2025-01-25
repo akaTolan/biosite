@@ -62,10 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
   heroVideo.playsInline = true;
 
   if (isMobileDevice()) {
-    heroImage.style.backgroundImage = "url('../assets/background-mobile.png')";
+    heroImage.style.backgroundImage = "url('./assets/background-mobile.png')";
     heroVideo.src = "./assets/background-mobile.mp4";
   } else {
-    heroImage.style.backgroundImage = "url('../assets/background-desktop.png')";
+    heroImage.style.backgroundImage = "url('./assets/background-desktop.png')";
     heroVideo.src = "./assets/background-desktop.mp4";
   }
 
