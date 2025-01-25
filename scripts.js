@@ -8,7 +8,6 @@
 const isMobileDevice = () =>
   /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
 
-
 /**
  * Animates typing text letter by letter in a specified HTML element.
  *
@@ -17,12 +16,21 @@ const isMobileDevice = () =>
  * @param {string[]} [colors=['#000']] - An array of colors for the text. Defaults to black.
  * @param {boolean} [loop=false] - Whether the text should loop after finishing.
  * @param {Function} [onComplete=null] - A callback function to be called when the animation completes.
- */
-const consoleText = (words, id, colors = ['#000'], loop = false, onComplete = null) => {
+ * @param {number} [typingSpeed=120] - The speed (in milliseconds) for typing each character.
+ **/
+
+const consoleText = (
+  words,
+  id,
+  colors = ["#000"],
+  loop = false,
+  onComplete = null,
+  typingSpeed = 120
+) => {
   let letterCount = 0;
   let waiting = false;
   const target = document.getElementById(id);
-  const con = document.getElementById('console'); // Cursor (_)
+  const con = document.getElementById("console"); // Cursor (_)
   let visible = true;
 
   target.style.color = colors[0];
@@ -46,29 +54,24 @@ const consoleText = (words, id, colors = ['#000'], loop = false, onComplete = nu
         // Finaliza a animação
         clearInterval(typingInterval);
         clearInterval(cursorInterval); // Para a animação do cursor
-        con.className = 'introduction__underscore body hidden'; // Remove o cursor (_)
+        con.className = "introduction__underscore body hidden"; // Remove o cursor (_)
         if (onComplete) onComplete(); // Chama a função final, se existir
       }
     }
-  }, 120);
+  }, typingSpeed);
 
-  // Cursor piscando (_)
+  // Cursor flashing (_)
   const cursorInterval = setInterval(() => {
     con.className = visible
-      ? 'introduction__underscore body hidden'
-      : 'introduction__underscore body';
+      ? "introduction__underscore body hidden"
+      : "introduction__underscore body";
     visible = !visible;
   }, 400);
 };
 
 /**
  * Initializes the document once the DOM content is loaded.
- *
- * This function sets up the hero section with a background video or image depending on the device type,
- * and animates typing text in the introduction section. It also handles the transition from the introduction
- * overlay to the main content.
  */
-
 document.addEventListener("DOMContentLoaded", () => {
   const content = document.querySelector(".content");
   const overlay = document.querySelector(".introduction");
@@ -99,15 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   heroVideo.addEventListener("error", () => {
-    console.error("Erro ao carregar o vídeo de fundo.");
+    console.error("Error loading background video.");
   });
 
-  // Chama o consoleText e adiciona as ações finais
   consoleText(
-    ['Every great thing starts with a blank page'], // Texto
-    'text',                                        // ID do elemento onde o texto será exibido
-    ['var(--text-color-1)'],                       // Cores do texto
-    false,                                         // Sem loop
+    ["Every great thing starts with a blank page"], // Texto
+    "text", // ID do elemento onde o texto será exibido
+    ["var(--text-color-1)"], // Cores do texto
+    false, // Sem loop
     () => {
       // Ações ao final da animação
       setTimeout(() => {
