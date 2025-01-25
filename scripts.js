@@ -1,7 +1,23 @@
+/**
+ * Checks if the current device is a mobile device.
+ *
+ * This function tests the user agent string to determine if the device is a mobile device.
+ *
+ * @returns {boolean} True if the device is a mobile device, false otherwise.
+ */
 const isMobileDevice = () =>
   /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
 
 
+/**
+ * Animates typing text letter by letter in a specified HTML element.
+ *
+ * @param {string[]} words - An array of words to be typed.
+ * @param {string} id - The ID of the HTML element where the text will be displayed.
+ * @param {string[]} [colors=['#000']] - An array of colors for the text. Defaults to black.
+ * @param {boolean} [loop=false] - Whether the text should loop after finishing.
+ * @param {Function} [onComplete=null] - A callback function to be called when the animation completes.
+ */
 const consoleText = (words, id, colors = ['#000'], loop = false, onComplete = null) => {
   let letterCount = 0;
   let waiting = false;
@@ -44,6 +60,14 @@ const consoleText = (words, id, colors = ['#000'], loop = false, onComplete = nu
     visible = !visible;
   }, 400);
 };
+
+/**
+ * Initializes the document once the DOM content is loaded.
+ *
+ * This function sets up the hero section with a background video or image depending on the device type,
+ * and animates typing text in the introduction section. It also handles the transition from the introduction
+ * overlay to the main content.
+ */
 
 document.addEventListener("DOMContentLoaded", () => {
   const content = document.querySelector(".content");
