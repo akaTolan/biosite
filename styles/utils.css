@@ -14,11 +14,16 @@
   border: 0;
 }
 
+.hidden {
+  opacity:0;
+}
+
 .save-touch-target {
     display: flex;
     align-items: center;
     padding: 8px;
     margin: -8px;
+    background-color: transparent;
 }
 
 .screen-reader-link {
