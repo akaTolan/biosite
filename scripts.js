@@ -29,7 +29,7 @@ const consoleText = (
   onComplete = null,
   showCursor = true,
   typingSpeed = 120,
-  delay = 1000 // Novo parâmetro: Tempo de pausa entre palavras (em ms)
+  delay = 500 // Novo parâmetro: Tempo de pausa entre palavras (em ms)
 ) => {
   let letterCount = 0;
   let waiting = false;
@@ -147,10 +147,10 @@ document.addEventListener("DOMContentLoaded", () => {
           content.ariaHidden = false; // Exibe o conteúdo
           overlay.remove(); // Remove o elemento após a transição
         });
-      }, 3200); // Tempo total antes do fade-out do overlay
+      }, 3000); // Tempo total antes do fade-out do overlay
     },
     false,
-    150
+    60
   );
 
   // FUNÇÃO COM ANIMAÇÃO E CORES E EM LOOP

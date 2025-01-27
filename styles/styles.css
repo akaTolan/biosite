@@ -111,7 +111,7 @@ a {
 .header .header__logo {
   /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
   position: absolute; /*  Permite posicionamento livre */
-  left: 3.5rem; /* Ajusta a posição à esquerda */
+  left: 3rem; /* Ajusta a posição à esquerda */
   left: calc(5% + 1rem);
   width: 40px; /* Ajuste conforme necessário */
   height: auto; /* Mantém a proporção */
@@ -121,7 +121,7 @@ a {
 .header .header__text {
   /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
   position: absolute; /*  Permite posicionamento livre */
-  right: calc(5% - 1rem);
+  right: 5%;
   writing-mode: vertical-rl; /* Orientação do texto na vertical */
   transform: rotate(360deg); /* Ajusta para leitura de cima para baixo */
   font-size: 0.6rem; /* Texto menor que o parágrafo */
@@ -191,7 +191,7 @@ a {
   background-color: transparent;
   pointer-events: visible;
   cursor: pointer;
-  margin-top: 3rem;
+  margin: 3rem 0 1rem;
 }
 
 .hero .burger-menu span {
@@ -381,7 +381,7 @@ S: 480px (Mobile phones and other small devices) */
     left: 3.5rem;
   }
   .header .header__text {
-    right: 5%;
+    right: 3rem;
   }
   .hero {
     height: 100vh;
@@ -396,6 +396,7 @@ S: 480px (Mobile phones and other small devices) */
     bottom: 1.25rem;
     left: 50%;
     height: 30px;
+    margin: 0;
     transform: translateX(-50%);
   }
 
