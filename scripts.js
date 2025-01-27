@@ -18,7 +18,7 @@ const isMobileDevice = () =>
  * @param {Function} [onComplete=null] - A callback function to be called when the animation completes.
  * @param {boolean} [showCursor=true] - Whether to display the blinking cursor or not.
  * @param {number} [typingSpeed=120] - The speed (in milliseconds) for typing each character.
- * @param {number} [delay=1000] - The delay (in milliseconds) between words.
+ * @param {number} [delay=0] - The delay (in milliseconds) between words.
  */
 
 const consoleText = (
@@ -29,19 +29,29 @@ const consoleText = (
   onComplete = null,
   showCursor = true,
   typingSpeed = 120,
-  delay = 500 // Novo parâmetro: Tempo de pausa entre palavras (em ms)
+  delay = 0 // Novo parâmetro: Tempo de pausa entre palavras (em ms)
 ) => {
   let letterCount = 0;
   let waiting = false;
   let wordIndex = 0; // Índice da palavra atual
   const target = document.getElementById(id);
-  const console = document.getElementById("console"); // Cursor (_)
+  const consoleElement = document.getElementById("console"); // Cursor (_)
   let visible = true;
   let cursorInterval;
 
+  // Verifica se os elementos existem antes de continuar
+  if (!target) {
+    consoleElement.error(`Element with ID "${id}" not found.`);
+    return;
+  }
+
+  if (showCursor && !consoleElement) {
+    consoleElement.warn("Cursor element not found. Skipping cursor animation.");
+  }
+
   // Ajusta as cores para garantir que correspondam ao número de palavras
   if (colors.length < words.length) {
-    console.warn(
+    consoleElement.warn(
       "The color array has fewer items than the word array. Repeating colors..."
     );
     colors = [
@@ -64,7 +74,7 @@ const consoleText = (
     } else {
       // Pausa antes de passar para a próxima palavra
       waiting = true;
-      setTimeout(() => {
+      const delayInterval = setTimeout(() => {
         letterCount = 0;
         wordIndex = (wordIndex + 1) % words.length; // Avança para a próxima palavra
         target.style.color = colors[wordIndex]; // Atualiza a cor do texto
@@ -72,7 +82,9 @@ const consoleText = (
 
         // Verifica se o loop está desativado e finaliza após exibir todas as palavras
         if (!loop && wordIndex === 0) {
+          console.log('Finalizou a animação');
           clearInterval(typingInterval);
+          clearInterval(delayInterval);
           if (showCursor && cursorInterval) clearInterval(cursorInterval);
           if (onComplete) onComplete(); // Chama o callback ao final da animação
         }
@@ -81,16 +93,16 @@ const consoleText = (
   }, typingSpeed);
 
   // Animação do cursor
-  if (showCursor && console) {
+  if (showCursor && consoleElement) {
     cursorInterval = setInterval(() => {
-      console.className = visible
+      consoleElement.className = visible
         ? "introduction__underscore body hidden"
         : "introduction__underscore body";
       visible = !visible;
     }, 400);
-  } else if (console) {
+  } else if (consoleElement) {
     // Remove o cursor se showCursor for false
-    console.remove();
+    consoleElement.remove();
   }
 };
 
@@ -103,6 +115,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const centeredText = document.querySelector(".introduction__text");
   const hero = document.querySelector(".hero");
   const heroImage = document.querySelector(".backround-image");
+
+  // Verifica se os elementos essenciais existem
+  if (!content || !overlay || !centeredText || !hero || !heroImage) {
+    console.error("Essential elements are missing. Aborting initialization.");
+    return;
+  }
+  window.scrollTo(0, 0); // Garante que o scroll está no topo da página
+
+  // Block the content until the animation is complete
+  content.classList.add("disabled");
 
   // Cria o elemento <video>
   const heroVideo = document.createElement("video");
@@ -122,12 +144,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   heroVideo.addEventListener("canplaythrough", () => {
-    hero.appendChild(heroVideo); // Adiciona o vídeo ao Hero
+    if (!hero.contains(heroVideo)) {
+      hero.appendChild(heroVideo);
+    }
     heroImage.style.opacity = "0";
   });
 
   heroVideo.addEventListener("error", () => {
     console.error("Error loading background video.");
+    heroImage.style.opacity = "1";
   });
 
   consoleText(
@@ -139,15 +164,16 @@ document.addEventListener("DOMContentLoaded", () => {
       // Ações ao final da animação
       setTimeout(() => {
         centeredText.style.opacity = "0"; // Inicia o fade-out do texto
-      }, 1600); // Metade do tempo do fade-out do overlay
+      }, 500); // Metade do tempo do fade-out do overlay
 
       setTimeout(() => {
         overlay.style.opacity = "0"; // Inicia o fade-out do overlay
         overlay.addEventListener("transitionend", () => {
           content.ariaHidden = false; // Exibe o conteúdo
+          content.classList.remove("disabled");
           overlay.remove(); // Remove o elemento após a transição
         });
-      }, 3000); // Tempo total antes do fade-out do overlay
+      }, 1800); // Tempo total antes do fade-out do overlay
     },
     false,
     60

@@ -86,7 +86,7 @@ a {
   top: 50%; /* Centraliza verticalmente */
   left: 50%;
   transform: translate(-50%, -50%); /* Ajusta o alinhamento central */
-  color: var(--text-color-1); 
+  color: var(--text-color-1);
   text-align: center; /* Alinha o texto no centro */
   opacity: 1; /* Totalmente opaco inicialmente */
   transition: opacity 1s ease-out; /* Transição suave para transparência */
@@ -103,7 +103,7 @@ a {
 /*****************/
 .header {
   position: absolute; /* Permite posicionamento livre */
-  top: 3.5rem; /* Espaçamento interno */
+  top: 2rem; /* Espaçamento interno */
   width: 100%; /* Largura total */
   height: auto;
 }
@@ -111,8 +111,7 @@ a {
 .header .header__logo {
   /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
   position: absolute; /*  Permite posicionamento livre */
-  left: 3rem; /* Ajusta a posição à esquerda */
-  left: calc(5% + 1rem);
+  left: 1.2rem; /* Ajusta a posição à esquerda */
   width: 40px; /* Ajuste conforme necessário */
   height: auto; /* Mantém a proporção */
   z-index: 10; /* Garante que o logótipo fica acima de outros elementos */
@@ -248,7 +247,7 @@ a {
 .list .list__item:last-child {
   border-bottom: none;
 }
-.list .list__item a{  
+.list .list__item a {
   color: var(--text-color-1);
   background-color: transparent;
   text-decoration: none;
@@ -377,6 +376,11 @@ S: 480px (Mobile phones and other small devices) */
   .introduction .introduction__text {
     left: calc(50% - 1rem);
   }
+
+  .header {
+    top: 3.5rem;
+  }
+
   .header .header__logo {
     left: 3.5rem;
   }

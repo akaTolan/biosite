@@ -18,6 +18,11 @@
   opacity:0;
 }
 
+.disabled {
+  pointer-events: none;
+  cursor: none;
+}
+
 .save-touch-target {
     display: flex;
     align-items: center;
