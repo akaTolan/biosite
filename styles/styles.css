@@ -287,8 +287,9 @@ a {
 .contact .contact__button {
   display: inline-block;
   padding: 1.75rem 4.5rem;
-  background-color: rgba(255, 255, 255, 0.16);
-  color: var(--text-color-0);
+  /* background-color: rgba(255, 255, 255, 0.16); */
+  background-color: var(--background-color-1);
+  color: var(--text-color-1);
   text-decoration: none;
   border-radius: 72px;
   transition: all 0.3s ease;
