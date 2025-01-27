@@ -16,8 +16,10 @@ const isMobileDevice = () =>
  * @param {string[]} [colors=['#000']] - An array of colors for the text. Defaults to black.
  * @param {boolean} [loop=false] - Whether the text should loop after finishing.
  * @param {Function} [onComplete=null] - A callback function to be called when the animation completes.
+ * @param {boolean} [showCursor=true] - Whether to display the blinking cursor or not.
  * @param {number} [typingSpeed=120] - The speed (in milliseconds) for typing each character.
- **/
+ * @param {number} [delay=1000] - The delay (in milliseconds) between words.
+ */
 
 const consoleText = (
   words,
@@ -25,48 +27,71 @@ const consoleText = (
   colors = ["#000"],
   loop = false,
   onComplete = null,
-  typingSpeed = 120
+  showCursor = true,
+  typingSpeed = 120,
+  delay = 1000 // Novo parâmetro: Tempo de pausa entre palavras (em ms)
 ) => {
   let letterCount = 0;
   let waiting = false;
+  let wordIndex = 0; // Índice da palavra atual
   const target = document.getElementById(id);
-  const con = document.getElementById("console"); // Cursor (_)
+  const console = document.getElementById("console"); // Cursor (_)
   let visible = true;
+  let cursorInterval;
 
-  target.style.color = colors[0];
+  // Ajusta as cores para garantir que correspondam ao número de palavras
+  if (colors.length < words.length) {
+    console.warn(
+      "The color array has fewer items than the word array. Repeating colors..."
+    );
+    colors = [
+      ...colors,
+      ...Array(words.length - colors.length).fill(colors[colors.length - 1]),
+    ];
+  }
 
-  // Escreve o texto letra por letra
+  // Define a cor inicial do texto
+  target.style.color = colors[wordIndex];
+
+  // Animação de digitação
   const typingInterval = setInterval(() => {
     if (waiting) return;
 
-    if (letterCount < words[0].length) {
-      target.innerHTML = words[0].substring(0, letterCount + 1);
+    // Digita a palavra atual
+    if (letterCount < words[wordIndex].length) {
+      target.innerHTML = words[wordIndex].substring(0, letterCount + 1);
       letterCount++;
     } else {
-      if (loop) {
-        // Reinicia o texto se o loop for ativado
-        waiting = true;
-        setTimeout(() => {
-          letterCount = 0;
-          waiting = false;
-        }, 1000);
-      } else {
-        // Finaliza a animação
-        clearInterval(typingInterval);
-        clearInterval(cursorInterval); // Para a animação do cursor
-        con.className = "introduction__underscore body hidden"; // Remove o cursor (_)
-        if (onComplete) onComplete(); // Chama a função final, se existir
-      }
+      // Pausa antes de passar para a próxima palavra
+      waiting = true;
+      setTimeout(() => {
+        letterCount = 0;
+        wordIndex = (wordIndex + 1) % words.length; // Avança para a próxima palavra
+        target.style.color = colors[wordIndex]; // Atualiza a cor do texto
+        waiting = false;
+
+        // Verifica se o loop está desativado e finaliza após exibir todas as palavras
+        if (!loop && wordIndex === 0) {
+          clearInterval(typingInterval);
+          if (showCursor && cursorInterval) clearInterval(cursorInterval);
+          if (onComplete) onComplete(); // Chama o callback ao final da animação
+        }
+      }, delay); // Usa o parâmetro delay
     }
   }, typingSpeed);
 
-  // Cursor flashing (_)
-  const cursorInterval = setInterval(() => {
-    con.className = visible
-      ? "introduction__underscore body hidden"
-      : "introduction__underscore body";
-    visible = !visible;
-  }, 400);
+  // Animação do cursor
+  if (showCursor && console) {
+    cursorInterval = setInterval(() => {
+      console.className = visible
+        ? "introduction__underscore body hidden"
+        : "introduction__underscore body";
+      visible = !visible;
+    }, 400);
+  } else if (console) {
+    // Remove o cursor se showCursor for false
+    console.remove();
+  }
 };
 
 /**
@@ -123,6 +148,19 @@ document.addEventListener("DOMContentLoaded", () => {
           overlay.remove(); // Remove o elemento após a transição
         });
       }, 3200); // Tempo total antes do fade-out do overlay
-    }
+    },
+    false,
+    150
   );
+
+  // FUNÇÃO COM ANIMAÇÃO E CORES E EM LOOP
+  // consoleText(
+  //   ["EAT donuts", "LOVE hapiness", "WORK less", "PLAY more", "SLEEP well"], // Palavras para animar
+  //   "text", // ID do elemento onde o texto será exibido
+  //   ["#000000", "#FA8072", "#AEC6CF", "#98FF98", "#000000"], // Cores: Branco, salmão, azul pastel, verde menta e branco
+  //   true, // Ativar loop
+  //   null, // Sem callback
+  //   false, // Mostrar cursor
+  //   160 // Velocidade da digitação (ms)
+  // );
 });

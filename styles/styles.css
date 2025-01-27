@@ -86,7 +86,7 @@ a {
   top: 50%; /* Centraliza verticalmente */
   left: 50%;
   transform: translate(-50%, -50%); /* Ajusta o alinhamento central */
-  color: var(--text-color-1); /* Texto preto */
+  color: var(--text-color-1); 
   text-align: center; /* Alinha o texto no centro */
   opacity: 1; /* Totalmente opaco inicialmente */
   transition: opacity 1s ease-out; /* Transição suave para transparência */
@@ -121,7 +121,7 @@ a {
 .header .header__text {
   /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
   position: absolute; /*  Permite posicionamento livre */
-  right: calc(5% + 1rem);
+  right: calc(5% - 1rem);
   writing-mode: vertical-rl; /* Orientação do texto na vertical */
   transform: rotate(360deg); /* Ajusta para leitura de cima para baixo */
   font-size: 0.6rem; /* Texto menor que o parágrafo */
@@ -145,7 +145,7 @@ a {
   min-height: 100vh;
   background-image: radial-gradient(
     circle,
-    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0.5) 60%,
     rgba(0, 0, 0, 1) 100%
   );
 }

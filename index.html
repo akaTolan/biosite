@@ -54,8 +54,8 @@
       href="assets/apple-touch-icon.png"
     />
     <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/utils.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/typography.css" />
   </head>
   <body>
@@ -74,7 +74,7 @@
     </section>
     <div class="content" aria-hidden="true">
       <header class="header" aria-label="FFF Design Assembly header">
-        <a class="screen-reader-link body-small" href="#list">
+        <a class="screen-reader-link body-small" tabindex="0" href="#list">
           skip to content
         </a>
         <a class="screen-reader-link body-small" href="#footer">
@@ -124,18 +124,17 @@
           </div>
         </section>
         <section id="list" class="list">
-          
           <nav class="list__nav" aria-labelledby="menuTitle">
             <h2 id="menuTitle" class="visually-hidden">
               FFF Design Assembly main navigation
             </h2>
-            <ol >
+            <ol>
               <li class="list__item" aria-labelledby="listItem_0">
                 <a
                   id="listItem_0"
                   href="https://docs.google.com/presentation/d/14P0JZk6URoxuOo20e49TV9icUQOPaEqEGVgG4PZ8NIU/edit?usp=sharing"
                   target="_blank"
-                  class="title"
+                  class="save-touch-target title"
                   aria-label="Visit external link About FFF Design Assembly"
                   >About Us</a
                 >
@@ -145,7 +144,7 @@
                   id="listItem_1"
                   href="https://www.behance.net/FFFDesignAssembly"
                   target="_blank"
-                  class="title"
+                  class="save-touch-target title"
                   aria-label="Visit external link About Projects & Case studies"
                   >Projects & Case studies</a
                 >
@@ -155,7 +154,7 @@
                   id="listItem_2"
                   href="https://foan82.notion.site/c360281047384d3589b7e066f7496445?v=8d508b095d6f46d4a398fea14dc20105"
                   target="_blank"
-                  class="title"
+                  class="save-touch-target title"
                   aria-label="Visit external link About AI.cademy"
                   >AI Research</a
                 >
@@ -165,7 +164,7 @@
                   id="listItem_3"
                   href="https://designsystemstandards.com"
                   target="_blank"
-                  class="title"
+                  class="save-touch-target title"
                   aria-label="Visit external link About Design System Standards"
                   >Design System Standards</a
                 >
@@ -215,19 +214,28 @@
               href="https://www.instagram.com/fff.design.assembly"
               class="footer__social-icon"
               aria-label="Go to external link of the Instagram"
-              ><img src="assets/instagram.png" role="presentation" class="footer__logo"
+              ><img
+                src="assets/instagram.png"
+                role="presentation"
+                class="footer__logo"
             /></a>
             <a
               href="https://www.behance.net/FFFDesignAssembly"
               class="footer__social-icon"
               aria-label="Go to external link of the Behance"
-              ><img src="assets/behance.png" role="presentation" class="footer__logo"
+              ><img
+                src="assets/behance.png"
+                role="presentation"
+                class="footer__logo"
             /></a>
             <a
               href="https://www.linkedin.com/company/fffdesignassembly"
               class="footer__social-icon"
               aria-label="Go to external link of the LinkedIn"
-              ><img src="assets/linkedin.png" role="presentation" class="footer__logo"
+              ><img
+                src="assets/linkedin.png"
+                role="presentation"
+                class="footer__logo"
             /></a>
           </div>
         </div>
