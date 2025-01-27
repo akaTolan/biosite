@@ -286,8 +286,8 @@ a {
 
 .contact .contact__button {
   display: inline-block;
-  padding: 1.75rem 4.5rem;
-  /* background-color: rgba(255, 255, 255, 0.16); */
+  font-weight: 700!important;
+  padding: 1rem 3rem;
   background-color: var(--background-color-1);
   color: var(--text-color-1);
   text-decoration: none;
@@ -297,7 +297,7 @@ a {
 }
 
 .contact .contact__button:hover {
-  background-color: rgba(255, 255, 255, 0.26);
+  background-color: rgba(255, 255, 255, 0.86);
 }
 /* Section Contact */
 /*****************/
@@ -337,8 +337,8 @@ a {
 
 .footer .footer__social-icon {
   position: relative;
-  width: 4.5rem; /* Placeholder para o ícone */
-  height: 4.5rem; /* Placeholder para o ícone */
+  width: 3.5rem; /* Placeholder para o ícone */
+  height: 3.5rem; /* Placeholder para o ícone */
   background-color: rgba(
     255,
     255,
