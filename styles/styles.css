@@ -297,7 +297,9 @@ a {
 }
 
 .contact .contact__button:hover {
-  background-color: rgba(255, 255, 255, 0.86);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-color-0);
+  
 }
 /* Section Contact */
 /*****************/
@@ -413,6 +415,6 @@ S: 480px (Mobile phones and other small devices) */
 /* override p/ ecrãs ainda maiores */
 @media (min-width: 1366px) {
   .hero .hero__wrapper {
-    max-width: 90%;
+    max-width: 80%;
   }
 }
