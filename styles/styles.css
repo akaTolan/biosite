@@ -82,45 +82,42 @@ a {
 /* Estilo do texto que aparece inicialmente centrado */
 .introduction .introduction__text {
   position: absolute;
-  width: 60%;
+  width: 80%;
   top: 50%; /* Centraliza verticalmente */
   left: 50%;
   transform: translate(-50%, -50%); /* Ajusta o alinhamento central */
   color: var(--text-color-1);
   text-align: center; /* Alinha o texto no centro */
+  text-wrap: balance;
   opacity: 1; /* Totalmente opaco inicialmente */
   transition: opacity 1s ease-out; /* Transição suave para transparência */
 }
 
 .introduction .introduction__underscore {
   display: inline-block;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 
 /* Section Header */
 /*****************/
 .header {
   position: absolute; /* Permite posicionamento livre */
-  top: 2rem; /* Espaçamento interno */
+  top: clamp(1.75rem, 2rem, 3.5rem); /* Espaçamento interno */
   width: 100%; /* Largura total */
   height: auto;
 }
 /* Estilo do Logo que aparece por cima de tudo no topo */
 .header .header__logo {
-  /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
   position: absolute; /*  Permite posicionamento livre */
-  left: 1.2rem; /* Ajusta a posição à esquerda */
+  left: clamp(1.2rem, 5%, 3.5rem); /* Ajusta a posição à esquerda */
   width: 40px; /* Ajuste conforme necessário */
   height: auto; /* Mantém a proporção */
   z-index: 10; /* Garante que o logótipo fica acima de outros elementos */
+  transition: left 0.3s ease-in-out;
 }
 /* Estilo do texto que aparece na lombada vertical */
 .header .header__text {
-  /* position: fixed; Fixa o elemento na tela, independentemente do scroll */
   position: absolute; /*  Permite posicionamento livre */
-  right: 5%;
+  right: clamp(1rem, 5%, 3rem);
   writing-mode: vertical-rl; /* Orientação do texto na vertical */
   transform: rotate(360deg); /* Ajusta para leitura de cima para baixo */
   font-size: 0.6rem; /* Texto menor que o parágrafo */
@@ -128,6 +125,7 @@ a {
   z-index: 10; /* Garante que fica acima de outros elementos */
   letter-spacing: 1px; /* Espaçamento entre letras */
   white-space: nowrap; /* Impede a quebra de texto em espaços */
+  transition: right 0.3s ease-in-out;
 }
 
 /* Section Hero */
@@ -138,7 +136,7 @@ a {
   flex-direction: column; /* Alinha o conteúdo na vertical */
   justify-content: center; /* Alinha o conteúdo verticalmente ao centro */
   align-items: start; /* Alinha horizontalmente o conteúdo ao centro */
-  padding: 0 5%; /* Espaçamento interno em torno do conteúdo */
+  padding: 0 clamp(1rem, 5%, 3rem); /* Espaçamento interno em torno do conteúdo */
   max-width: 100%; /* Largura total */
   height: fit-content;
   min-height: 100vh;
@@ -159,7 +157,7 @@ a {
   background-size: cover; /* Faz com que a imagem cubra todo o contêiner */
   background-position: center; /* Centraliza a imagem de fundo */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
-  transition: opacity 5s ease-in-out;
+  transition: opacity 5s ease-out;
 }
 
 .hero .background-video {
@@ -199,7 +197,7 @@ a {
   width: 3rem;
   background-color: var(--burguer-color);
   margin: 0 auto;
-  margin-bottom: 6px;
+  margin-bottom: 0.375rem;
   border-radius: 2px;
   transition: 0.3s ease;
 }
@@ -218,7 +216,7 @@ a {
 .list {
   background-color: var(--text-color-0);
   color: var(--background-color-0);
-  padding: 0 5%;
+  padding: 0 clamp(1rem, 5%, 3rem);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -261,7 +259,7 @@ a {
 /* Section Contact */
 /*****************/
 .contact {
-  padding: 4rem 1rem 0rem 1rem; /* Espaçamento interno */
+  padding: 4rem 1rem 0; /* Espaçamento interno */
   background-color: var(--background-color-0); /* Fundo preto */
   color: var(--text-color-0); /* Texto branco */
   text-align: center;
@@ -272,7 +270,7 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 0 5%;
+  margin: 0 clamp(1rem, 5%, 3rem);
   border-bottom: 0.125rem solid rgba(255, 255, 255, 0.24);
 }
 
@@ -286,7 +284,7 @@ a {
 
 .contact .contact__button {
   display: inline-block;
-  font-weight: 700!important;
+  font-weight: 700 !important;
   padding: 1rem 3rem;
   background-color: var(--background-color-1);
   color: var(--text-color-1);
@@ -299,18 +297,18 @@ a {
 .contact .contact__button:hover {
   background-color: rgba(255, 255, 255, 0.2);
   color: var(--text-color-0);
-  
 }
+
 /* Section Contact */
 /*****************/
 
 .footer {
-  padding: 5%;
+  padding: clamp(1rem, 5%, 3rem);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 .footer .footer__wrapper {
@@ -324,7 +322,7 @@ a {
 }
 
 .footer .footer__logo {
-  width: 150px; /* Tamanho do logotipo */
+  width: 9.375rem; /* Tamanho do logotipo */
   height: auto; /* Mantém a proporção */
   margin: 0 auto; /* Espaço acima e abaixo */
   margin-bottom: 4rem;
@@ -377,19 +375,14 @@ S: 480px (Mobile phones and other small devices) */
 /* override p/ tablets e desktop */
 @media (min-width: 768px) {
   .introduction .introduction__text {
+    width: 60%;
     left: calc(50% - 1rem);
   }
 
   .header {
-    top: 3.5rem;
+    top: clamp(2rem, 3.5rem, 4.5rem);
   }
-
-  .header .header__logo {
-    left: 3.5rem;
-  }
-  .header .header__text {
-    right: 3rem;
-  }
+  
   .hero {
     height: 100vh;
   }
