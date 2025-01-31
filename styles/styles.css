@@ -184,6 +184,10 @@ a {
   margin-bottom: 1.5rem;
 }
 
+.hero .hero__text {
+  text-wrap: balance;
+}
+
 .hero .burger-menu {
   position: relative;
   display: block;
