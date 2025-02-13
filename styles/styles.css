@@ -262,6 +262,54 @@ a {
   opacity: 0.55;
 }
 
+/* Section Promo */
+/*****************/
+.promo {
+  padding: 4rem 1rem 0rem 1rem; /* Espaçamento interno */
+  background-color: var(--background-color-0); /* Fundo preto */
+  color: var(--text-color-0); /* Texto branco */
+  text-align: center;
+}
+
+.promo .promo__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 5%;
+  border-bottom: 0.125rem solid rgba(255, 255, 255, 0.24);
+}
+
+.promo .promo__title {
+  margin-bottom: 1rem;
+}
+
+.promo .promo__subtitle {
+  margin-bottom: 2rem;
+}
+
+.promo .promo__button {
+  display: inline-block;
+  font-weight: 700!important;
+  padding: 1rem 3rem;
+  background-color: var(--background-color-1);
+  color: var(--text-color-1);
+  text-decoration: none;
+  border-radius: 72px;
+  transition: all 0.3s ease;
+  margin-bottom: 5.5rem;
+}
+
+.promo .promo__button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-color-0);
+  
+}
+/* Section Promo */
+/*****************/
+
+
+
 /* Section Contact */
 /*****************/
 .contact {
