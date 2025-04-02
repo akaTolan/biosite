@@ -119,6 +119,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Verifica se os elementos essenciais existem
   if (!content || !overlay || !centeredText || !hero || !heroImage) {
     console.error("Essential elements are missing. Aborting initialization.");
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
+    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
     return;
   }
   window.scrollTo(0, 0); // Garante que o scroll está no topo da página
@@ -154,6 +166,53 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Error loading background video.");
     heroImage.style.opacity = "1";
   });
+
+  // === Modal de Vídeo ===
+  const thumbnail = document.querySelector(".video-thumbnail");
+  const videoButton = document.querySelector(".video__control__button");
+  const modal = document.querySelector(".video__modal");
+  const iframe = document.querySelector(".video-frame");
+  const closeBtn = document.querySelector(".video__modal__close");
+
+  if (thumbnail && modal && iframe && closeBtn) {
+    thumbnail.addEventListener("click", (e) => {
+      e.stopPropagation();
+      openModal();
+    });
+    
+    thumbnail.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openModal();
+      }
+    });
+
+    videoButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      openModal();
+    });
+
+    closeBtn.addEventListener("click", () => {
+      closeModal();
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  }
+
+
+  function openModal() {
+    iframe.src = "https://www.youtube.com/embed/7ueYvVdbdBI??autoplay=1&rel=0"; 
+    modal.showModal();
+    closeBtn.focus();
+  }
+  function closeModal() {
+    iframe.src = "";
+    modal.close();
+  }
 
   consoleText(
     ["Every great thing starts with a blank page"], // Texto

@@ -45,6 +45,7 @@
 }
 
 .screen-reader-link:active,
+.screen-reader-link:focus-visible,
 .screen-reader-link:focus {
     display: inline-block;
     position: absolute;
