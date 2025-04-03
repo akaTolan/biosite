@@ -158,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // === Modal de Vídeo ===
   const thumbnail = document.querySelector(".video-thumbnail");
-  const videoButton = document.querySelector(".video__control__button");
   const modal = document.querySelector(".video__modal");
   const iframe = document.querySelector(".video-frame");
   const closeBtn = document.querySelector(".video__modal__close");
@@ -184,11 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         openModal();
       }
-    });
-
-    videoButton.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openModal();
     });
 
     closeBtn.addEventListener("click", () => {
