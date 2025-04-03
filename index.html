@@ -129,14 +129,14 @@
           <figure
             id="video-thumbnail"
             class="video-thumbnail"
-            aria-label="Click to play video"
+            aria-label="Click to play institutional video about FFF Design Assembly"
           >
             <img
               src="https://img.youtube.com/vi/7ueYvVdbdBI/maxresdefault.jpg"
-              alt="Video Thumbnail"
+              alt="Cover image of the corporate video"
             />
             <div class="video__control">
-              <button class="video__control__button" aria-label="Play video">
+              <button class="video__control__button" aria-label="Open institutional video about FFF Design Assembly">
                 <img src="assets/play_sign.png" alt="" />
               </button>
             </div>
@@ -201,7 +201,7 @@
             </p>
             <a
               href="https://fffda.gumroad.com/l/AIrepo"
-              aria-label="Go to external link wiht a product about AI repository"
+              aria-label="Go to external link with a product about the AI repository"
               class="button promo__button body-small"
               >AI REPOSITORY</a
             >
@@ -219,7 +219,7 @@
             </p>
             <a
               href="https://wa.me/351918941143"
-              aria-label="Go to external link to Schedule a call"
+              aria-label="Go to external link to schedule a call"
               class="button contact__button body-small"
               >BOOK A CALL</a
             >
@@ -248,7 +248,7 @@
             <a
               href="https://www.instagram.com/fff.design.assembly"
               class="footer__social-icon"
-              aria-label="Go to external link of the Instagram"
+              aria-label="Visit FFF Design Assembly on Instagram"
               ><img
                 src="assets/instagram.png"
                 role="presentation"
@@ -257,7 +257,7 @@
             <a
               href="https://www.behance.net/FFFDesignAssembly"
               class="footer__social-icon"
-              aria-label="Go to external link of the Behance"
+              aria-label="Visit FFF Design Assembly on Behance"
               ><img
                 src="assets/behance.png"
                 role="presentation"
@@ -266,7 +266,7 @@
             <a
               href="https://www.linkedin.com/company/fffdesignassembly"
               class="footer__social-icon"
-              aria-label="Go to external link of the LinkedIn"
+              aria-label="Visit FFF Design Assembly on LinkedIn"
               ><img
                 src="assets/linkedin.png"
                 role="presentation"
@@ -279,6 +279,12 @@
     <!-- Modal Structure -->
     <dialog class="video__modal">
       <div class="video__modal__container">
+        <button class="video__modal__close" aria-label="Close video modal">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
         <iframe
           class="video-frame"
           width="100%"
@@ -287,10 +293,7 @@
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        ></iframe>
-        <button class="screen-reader-link video__modal__close">
-          Close modal
-        </button>
+        ></iframe>        
       </div>
     </dialog>
     <!-- Script para remover overlay após fade-out -->

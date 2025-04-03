@@ -106,6 +106,7 @@ const consoleText = (
   }
 };
 
+
 /**
  * Initializes the document once the DOM content is loaded.
  */
@@ -119,18 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Verifica se os elementos essenciais existem
   if (!content || !overlay || !centeredText || !hero || !heroImage) {
     console.error("Essential elements are missing. Aborting initialization.");
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
-    console.log("🚀 ~ document.addEventListener ~ thumbnail:", thumbnail)
     return;
   }
   window.scrollTo(0, 0); // Garante que o scroll está no topo da página
@@ -174,12 +163,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.querySelector(".video-frame");
   const closeBtn = document.querySelector(".video__modal__close");
 
+  const openModal = () => {
+    iframe.src = "https://www.youtube.com/embed/7ueYvVdbdBI?autoplay=1&rel=0"; 
+    modal.showModal();
+    closeBtn.focus();
+  }
+  const closeModal= () => {
+    iframe.src = "";
+    modal.close();
+  }
+
   if (thumbnail && modal && iframe && closeBtn) {
     thumbnail.addEventListener("click", (e) => {
       e.stopPropagation();
       openModal();
     });
-    
+
     thumbnail.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
@@ -204,15 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  function openModal() {
-    iframe.src = "https://www.youtube.com/embed/7ueYvVdbdBI??autoplay=1&rel=0"; 
-    modal.showModal();
-    closeBtn.focus();
-  }
-  function closeModal() {
-    iframe.src = "";
-    modal.close();
-  }
+  
 
   consoleText(
     ["Every great thing starts with a blank page"], // Texto

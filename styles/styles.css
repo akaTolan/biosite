@@ -240,7 +240,7 @@ section {
   padding:0;
 }
 
-.video-thumbnail {
+.video-section .video-thumbnail {
   width: 100%;
   height: 100%;
   cursor: pointer;
@@ -248,19 +248,19 @@ section {
   position: relative;
 }
 
-.video-thumbnail img {
+.video-section .video-thumbnail img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center; 
 }
 
-.video__control button {
+.video-section .video-thumbnail .video__control button {
   background: none;
   border: none;
   cursor: pointer;
 } 
-.video__control {
+.video-section .video-thumbnail .video__control {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -313,27 +313,54 @@ section {
   display: flex; /* ou grid, conforme o layout */
   justify-content: center;
   align-items: center;
+  animation: fadeInModal 500ms ease-in-out;
 }
 
-.video__modal__container {
+.video__modal .video__modal__container {
   position: relative;
+  text-align: right;
   width: 100%;
   height: 100%;
+  background-color: var(--background-color-0);
 }
 
-.video__modal__close {
-  left: auto;
-  right: 0;
+.video__modal .video__modal__close {
+  margin-left: auto;
+  display: inline-block;
+  position: relative;
+  padding: 1rem;
+  color: var(--text-color-0);
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 50%;  
 }
-.video__modal__close:active,
-.video__modal__close:focus {
-    top: 0;
+.video__modal .video__modal__close svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1100;
+  transform: translate(-50%, -50%);
 }
 
-.video__modal__close-icon {
-  width: 30px;
-  height: 30px;
+.video__modal .video__modal__close::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  z-index: 1000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.16);  
 }
+
+.video__modal .video__modal__close:hover::before {
+  background-color: rgba(255, 255, 255, 0.36);  
+}
+
+
 
 /* Section List */
 /*****************/
@@ -552,4 +579,15 @@ S: 480px (Mobile phones and other small devices) */
   }
 }
 
+/* Animação do modal */
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: scaleY(0.75);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
 
